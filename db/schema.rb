@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151123163502) do
+ActiveRecord::Schema.define(version: 20151123164033) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,18 @@ ActiveRecord::Schema.define(version: 20151123163502) do
   end
 
   add_index "jobs", ["domain_id"], name: "index_jobs_on_domain_id", using: :btree
+
+  create_table "project_jobs", force: :cascade do |t|
+    t.integer  "project_id"
+    t.integer  "job_id"
+    t.integer  "count"
+    t.float    "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "project_jobs", ["job_id"], name: "index_project_jobs_on_job_id", using: :btree
+  add_index "project_jobs", ["project_id"], name: "index_project_jobs_on_project_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
     t.string   "title"
@@ -61,5 +73,7 @@ ActiveRecord::Schema.define(version: 20151123163502) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "jobs", "domains"
+  add_foreign_key "project_jobs", "jobs"
+  add_foreign_key "project_jobs", "projects"
   add_foreign_key "projects", "users"
 end
