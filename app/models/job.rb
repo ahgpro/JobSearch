@@ -1,4 +1,5 @@
 class Job < ActiveRecord::Base
-  belongs_to :project_jobs
+  has_many :project_jobs
+  belongs_to :domain
   validates :domain_id, presence: true
 end

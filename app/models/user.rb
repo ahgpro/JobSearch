@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
 
   has_many :projects
   has_many :postulants
+  has_many :project_jobs, through: :postulants
+  has_many :jobs, through: :project_jobs
 end
