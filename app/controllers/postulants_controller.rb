@@ -1,0 +1,2 @@
+class PostulantsController < ApplicationController
+end
