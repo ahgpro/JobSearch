@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-  devise_for :users, controllers: { registrations: 'users/registrations' }
+  devise_for :users, controllers: { registrations: 'users/registrations', omniauth_callbacks: 'users/omniauth_callbacks' }
   # , controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   resources :users, only: [ :edit, :update ]
 
