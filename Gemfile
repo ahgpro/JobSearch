@@ -15,6 +15,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'faker'
+gem 'omniauth-facebook'
 
 group :development, :test do
   gem 'binding_of_caller'
