@@ -61,6 +61,8 @@ ActiveRecord::Schema.define(version: 20151124111522) do
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "projects", ["user_id"], name: "index_projects_on_user_id", using: :btree
