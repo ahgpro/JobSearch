@@ -1,5 +1,5 @@
 class ProjectJob < ActiveRecord::Base
-  belongs_to :project, dependent: :destroy
+  belongs_to :project
   belongs_to :job
 
   has_many :postulants

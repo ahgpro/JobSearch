@@ -1,0 +1,26 @@
+<h1>Project#show</h1>
+<p>Find me in app/views/project/show.html.erb</p>
+
+
+<div class="project_container">
+  <div class="container">
+    <div class="title-project">
+      <%= @project.title %>
+    </div>
+    <div class="project-description">
+      <%= @project.description %>
+    </div>
+    <div class="row">
+
+      <% @project.jobs.each do |job| %>
+      <div class="col-md-4">
+        <div class="rounded-job">
+         <div class='div-span'><%= job.name %></div>
+ --> Liens
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

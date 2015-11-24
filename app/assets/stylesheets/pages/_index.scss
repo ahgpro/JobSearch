@@ -1,1 +1,53 @@
 @import "home";
+
+ul {
+  list-style-type: none;
+}
+
+ul li { display: inline; }
+
+li {
+
+}
+
+.project_container {
+  background-color: #F7F7F7;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+
+.title-project {
+  text-align: center;
+  color: white;
+}
+
+.project-description {
+  padding: 10px;
+  text-align: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.rounded-job {
+  display: inline-block;
+  background-color: white;
+  background-position: 50% 50%;
+  background-size: cover;
+  border-radius: 50%;
+  text-align: center;
+  width: 130px;
+  height: 130px;
+  padding: 5px;
+
+}
+.col-md-4 {
+  margin-bottom: 10px;
+}
+
+.div-span {
+  position: relative;
+  top:42%;
+/* line-height: 130px;*/
+}
