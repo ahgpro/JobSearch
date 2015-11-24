@@ -5,6 +5,7 @@ class Project < ActiveRecord::Base
   has_many :users, through: :postulants
   has_many :jobs, through: :project_jobs
 
+  mount_uploader :media, MediaUploader
 
   validates :user_id, presence: true
   validates :title, presence: true

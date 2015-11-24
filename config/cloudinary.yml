@@ -1,19 +1,4 @@
 ---
-development:
-  cloud_name: dubxeb5ab
-  api_key: '346428262597474'
-  api_secret: iHNZkjlXP8DNx__N2RItiJFcTOQ
-  enhance_image_tag: true
-  static_image_support: false
-production:
-  cloud_name: dubxeb5ab
-  api_key: '346428262597474'
-  api_secret: iHNZkjlXP8DNx__N2RItiJFcTOQ
-  enhance_image_tag: true
-  static_image_support: true
-test:
-  cloud_name: dubxeb5ab
-  api_key: '346428262597474'
-  api_secret: iHNZkjlXP8DNx__N2RItiJFcTOQ
-  enhance_image_tag: true
-  static_image_support: false
+cloudinary_cloud_name: dubxeb5ab
+cloudinary_api_key: '346428262597474'
+cloudinary_api_secret: iHNZkjlXP8DNx__N2RItiJFcTOQ
