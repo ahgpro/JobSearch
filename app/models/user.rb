@@ -10,5 +10,4 @@ class User < ActiveRecord::Base
   has_many :jobs, through: :project_jobs
 
   validates :first_name, presence: true
-  validates :last_name, presence: true
 end
