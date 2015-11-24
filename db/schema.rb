@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151123174342) do
+ActiveRecord::Schema.define(version: 20151124111522) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,10 +46,10 @@ ActiveRecord::Schema.define(version: 20151123174342) do
   create_table "project_jobs", force: :cascade do |t|
     t.integer  "project_id"
     t.integer  "job_id"
-    t.integer  "count"
     t.float    "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "number"
   end
 
   add_index "project_jobs", ["job_id"], name: "index_project_jobs_on_job_id", using: :btree
@@ -78,6 +78,8 @@ ActiveRecord::Schema.define(version: 20151123174342) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
