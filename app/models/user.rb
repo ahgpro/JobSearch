@@ -8,4 +8,7 @@ class User < ActiveRecord::Base
   has_many :postulants
   has_many :project_jobs, through: :postulants
   has_many :jobs, through: :project_jobs
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
 end
