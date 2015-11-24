@@ -1,6 +1,6 @@
 class Project < ActiveRecord::Base
   belongs_to :user
-  has_many :project_jobs
+  has_many :project_jobs, dependent: :destroy
   has_many :postulants, through: :project_jobs
   has_many :users, through: :postulants
   has_many :jobs, through: :project_jobs
