@@ -9,19 +9,34 @@
     </div>
     <div class="project-description">
       <%= @project.description %>
-       <div class="rounded-job" style="background-image: url('<%= image_path(@project.media) %>');">
-    </div>
-    <div class="row">
-
-      <% @project.jobs.each do |job| %>
-      <div class="col-md-4">
-        <div class="rounded-job" style="background-image: url('<%= image_path(job.picture) %>');">
-         <div class='div-span'><%= job.name %></div>
- --> Liens
-        </div>
+      <div class="rounded-job" style="background-image: url('<%= image_path(@project.media) %>');">
       </div>
-      <% end %>
-    </div>
+      <div class="row">
+
+        <% @project.project_jobs.each do |project_job| %>
+        <div class="col-md-4">
+          <div class="rounded-job" style="background-image: url('<%= image_path(project_job.job.picture) %>');">
+            <div class="job-count"><%= project_job.number %></div>
+            <div class='div-span'><%= project_job.job.name %></div>
+            --> Liens
+       </div>
+     </div>
+     <% end %>
+   </div>
+ </div>
+</div>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+    <%= simple_form_for [@project, @project_job] do |f| %>
+      <%= f.error_notification %>
+      <%= f.input :job_id, collection: Job.all, prompt: "choose a job" %>
+      <%= f.input :number, placeholder: "Quantity of" %>
+      <%= f.button :submit, class: "btn btn-primary" %>
+    <% end %>
+    <p>
+      <%= link_to "Back", project_path(@project), class: "btn btn-info" %>
+    </p>
   </div>
 </div>
 </div>
+
