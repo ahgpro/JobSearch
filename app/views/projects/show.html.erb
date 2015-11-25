@@ -15,7 +15,6 @@
 
         <% @project.project_jobs.each do |project_job| %>
         <div class="col-md-4">
-          <%= project_job.inspect %>
           <div class="rounded-job" style="background-image: url('<%= image_path(project_job.job.picture) %>');">
             <div class="job-count"><%= project_job.number %></div>
             <div class='div-span'><%= project_job.job.name %></div>
