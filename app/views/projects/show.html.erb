@@ -9,12 +9,13 @@
     </div>
     <div class="project-description">
       <%= @project.description %>
+       <div class="rounded-job" style="background-image: url('<%= image_path(@project.media) %>');">
     </div>
     <div class="row">
 
       <% @project.jobs.each do |job| %>
       <div class="col-md-4">
-        <div class="rounded-job">
+        <div class="rounded-job" style="background-image: url('<%= image_path(job.picture) %>');">
          <div class='div-span'><%= job.name %></div>
  --> Liens
         </div>
@@ -23,4 +24,4 @@
     </div>
   </div>
 </div>
-
+</div>
