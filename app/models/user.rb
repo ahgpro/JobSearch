@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   has_many :jobs, through: :project_jobs
 
 
-  validates :first_name, presence: true
+
 
   devise :omniauthable, omniauth_providers: [:facebook]
 
