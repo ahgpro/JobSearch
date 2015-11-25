@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20151125100805) do
     t.datetime "updated_at", null: false
   end
 
+
   add_index "jobs", ["domain_id"], name: "index_jobs_on_domain_id", using: :btree
 
   create_table "postulants", force: :cascade do |t|
