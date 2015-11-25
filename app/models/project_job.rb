@@ -6,5 +6,7 @@ class ProjectJob < ActiveRecord::Base
   has_many :users, through: :postulants
 
   validates :project_id, presence: true
+
+  validates :number, :numericality => { :greater_than => 0 }
   # validates :job, presence: true
 end
