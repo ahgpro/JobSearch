@@ -9,6 +9,9 @@ class User < ActiveRecord::Base
   has_many :project_jobs, through: :postulants
   has_many :jobs, through: :project_jobs
 
+
+  validates :first_name, presence: true
+
   devise :omniauthable, omniauth_providers: [:facebook]
 
   def self.find_for_facebook_oauth(auth)
@@ -24,5 +27,4 @@ class User < ActiveRecord::Base
       user.token_expiry = Time.at(auth.credentials.expires_at)
     end
   end
-
 end

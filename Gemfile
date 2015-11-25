@@ -15,8 +15,13 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'faker'
+
+gem 'carrierwave'
+gem 'cloudinary'
+
 gem 'omniauth-facebook'
 gem 'figaro'
+
 
 group :development, :test do
   gem 'binding_of_caller'
@@ -31,3 +36,4 @@ group :production do
   gem 'rails_12factor'
   gem 'puma'
 end
+

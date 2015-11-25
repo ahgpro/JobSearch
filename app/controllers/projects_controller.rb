@@ -16,13 +16,14 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
+    bye-bug
     if @project.save
       redirect_to @project
+
     else
       render :new
     end
   end
-
 
 
   def destroy
@@ -37,7 +38,7 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:title, :description)
+    params.require(:project).permit(:title, :description, :media)
   end
 
 end
