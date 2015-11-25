@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :projects , only: [:new, :create,:show, :edit, :delete, :index] do
     resources :project_jobs , only: [:show, :create, :delete, :index] do
-      resources :postulants , only: [:show, :delete, :index]
+      resources :postulants , only: [:show, :delete, :index, :create]
     end
   end
 
