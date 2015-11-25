@@ -16,7 +16,6 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    bye-bug
     if @project.save
       redirect_to @project
 

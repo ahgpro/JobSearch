@@ -9,6 +9,7 @@
       <%=link_to "See the project", project_path(project) %>
     <div class="project-description">
       <%= project.description %>
+      <div class="rounded-job" style="background-image: url('<%= image_path(project.media) %>');">
     </div>
     <div class="row">
 
@@ -22,5 +23,6 @@
       <% end %>
     </div>
   </div>
+</div>
 </div>
 <% end %>

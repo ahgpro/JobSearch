@@ -7,7 +7,7 @@ class Project < ActiveRecord::Base
 
   mount_uploader :media, MediaUploader
 
-  validates :user_id, presence: true
-  validates :title, presence: true
-  validates :description, presence: true
+  # validates :user_id, presence: true
+  # validates :title, presence: true
+  # validates :description, presence: true
 end
