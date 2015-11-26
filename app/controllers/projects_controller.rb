@@ -3,8 +3,7 @@ class ProjectsController < ApplicationController
  before_action :find_project, only: [:show, :destroy]
 
   def index
-    @projects = Project.all
-
+    @projects = policy_scope(Project)
   end
 
   def show
@@ -35,6 +34,7 @@ class ProjectsController < ApplicationController
 
   def find_project
     @project = Project.find(params[:id])
+    authorize @project
   end
 
   def project_params
