@@ -21,6 +21,7 @@ gem 'cloudinary'
 
 gem 'omniauth-facebook'
 gem 'figaro'
+gem 'pundit'
 
 group :development, :test do
   gem 'binding_of_caller'
