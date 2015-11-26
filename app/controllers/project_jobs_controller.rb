@@ -2,6 +2,11 @@ class ProjectJobsController < ApplicationController
 
   before_action :find_project, only: [ :new, :create]
 
+  def show
+    @postulants = Postulant.all
+    @project_job = ProjectJob.find(params[:id])
+  end
+
   def create
     @project_job = @project.project_jobs.build(project_job_params)
     if @project_job.save

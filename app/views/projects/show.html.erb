@@ -14,11 +14,11 @@
       <div class="row">
 
         <% @project.project_jobs.each do |project_job| %>
-        <div class="col-md-4">
+        <div class="col-md-12">
           <div class="rounded-job" style="background-image: url('<%= image_path(project_job.job.picture) %>');">
             <div class="job-count"><%= project_job.number %></div>
             <div class='div-span'><%= project_job.job.name %></div>
-            <%= link_to "Postuler", project_project_job_postulants_path(@project, project_job.id), method: :post %>
+            --> Liens
        </div>
      </div>
      <% end %>
@@ -31,6 +31,7 @@
       <%= f.error_notification %>
       <%= f.input :job_id, collection: Job.all, prompt: "choose a job" %>
       <%= f.input :number, placeholder: "Quantity of" %>
+      <%= f.input :description, placeholder: "Add a description of the job" %>
       <%= f.button :submit, class: "btn btn-primary" %>
     <% end %>
     <p>
