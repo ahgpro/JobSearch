@@ -18,7 +18,9 @@
           <div class="rounded-job" style="background-image: url('<%= image_path(project_job.job.picture) %>');">
             <div class="job-count"><%= project_job.number %></div>
             <div class='div-span'><%= project_job.job.name %></div>
-            --> Liens
+            <div class='div-span'><%= project_job.description %></div>
+            <%= link_to "Postuler", project_project_job_postulants_path(@project, project_job.id), method: :post %>
+
        </div>
      </div>
      <% end %>
