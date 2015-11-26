@@ -14,32 +14,44 @@
       <div class="row">
 
         <% @project.project_jobs.each do |project_job| %>
-        <div class="col-md-12">
-          <div class="rounded-job" style="background-image: url('<%= image_path(project_job.job.picture) %>');">
-            <div class="job-count"><%= project_job.number %></div>
-            <div class='div-span'><%= project_job.job.name %></div>
+          <div class="col-md-12">
+            <div class="rounded-job" style="background-image: url('<%= image_path(project_job.job.picture) %>');">
+              <div class="job-count"><%= project_job.number %></div>
+              <div class='div-span'><%= project_job.job.name %></div>
+            </div>
             <div class='div-span'><%= project_job.description %></div>
-            <%= link_to "Postuler", project_project_job_postulants_path(@project, project_job.id), method: :post %>
+            <% project_job.postulants.each do |postulant| %>
+            <ul>
+            <li>
+              <%= postulant.user.first_name %>
+              <%= postulant.user.last_name[0] %>.
+              <%= postulant.status %>
+              <%= link_to "Voir le profil", user_path(postulant.user)%>
+             </li>
 
-       </div>
-     </div>
-     <% end %>
-   </div>
- </div>
-</div>
-<div class="row">
-  <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-    <%= simple_form_for [@project, @project_job] do |f| %>
+            </ul>
+            <% end %>
+            <%= link_to "Postuler", project_project_job_postulants_path(@project, project_job.id), method: :post %>
+            <hr>
+          </div>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+      <%= simple_form_for [@project, @project_job] do |f| %>
       <%= f.error_notification %>
       <%= f.input :job_id, collection: Job.all, prompt: "choose a job" %>
       <%= f.input :number, placeholder: "Quantity of" %>
       <%= f.input :description, placeholder: "Add a description of the job" %>
       <%= f.button :submit, class: "btn btn-primary" %>
-    <% end %>
-    <p>
-      <%= link_to "Back", project_path(@project), class: "btn btn-info" %>
-    </p>
+      <% end %>
+      <p>
+        <%= link_to "Back", project_path(@project), class: "btn btn-info" %>
+      </p>
+    </div>
   </div>
-</div>
 </div>
 
