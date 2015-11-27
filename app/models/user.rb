@@ -9,9 +9,6 @@ class User < ActiveRecord::Base
   has_many :project_jobs, through: :postulants
   has_many :jobs, through: :project_jobs
 
-
-
-
   devise :omniauthable, omniauth_providers: [:facebook]
 
   def self.find_for_facebook_oauth(auth)

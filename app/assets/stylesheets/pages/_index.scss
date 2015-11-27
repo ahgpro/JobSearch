@@ -2,53 +2,70 @@
 
 ul {
   list-style-type: none;
-}
-
-ul li { display: inline; }
-
-li {
-
+  display: inline;
 }
 
 .project_container {
-  background-color: #F7F7F7;
-  padding-bottom: 5px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
   margin-bottom: 5px;
+  border: 1px solid #d6d2cb;
+  border-radius: 10px;
 }
 
 .title-project {
-  text-align: center;
-  color: red;
+  margin-left: 20px;
+  text-align: left;
+  color: #100060;
   font-size: 40px;
 }
 
+
+
 .project-description {
-  padding: 10px;
-  text-align: center;
+  color:#000;
+  margin-left: 20px;
+  padding-top: 10px;
+  text-align: left;
 }
 
-.text-center {
-  text-align: center;
+.project-link {
+  margin-top: 5px;
+  margin-left: 20px;
+  text-align: left;
 }
 
-.rounded-job {
-  display: inline-block;
-  background-color: white;
-  background-position: 50% 50%;
-  background-size: cover;
-  border-radius: 50%;
-  text-align: center;
-  width: 130px;
-  height: 130px;
+
+.project-picture {
+
+  margin-left: 20px;
+  border-radius: 100%;
+  width: 200px;
+  height: 200px;
   padding: 5px;
 
 }
-.col-md-4 {
-  margin-bottom: 10px;
+
+.rounded-job {
+  margin-top: 10px;
+  margin-left: 20px;
+  display: text-align;
+  background-color: white;
+  background-position: 50% 50%;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+
+
 }
 
-.div-span {
-  position: relative;
-  top:42%;
-/* line-height: 130px;*/
+.job-list {
 }
+
+
+
+
+
