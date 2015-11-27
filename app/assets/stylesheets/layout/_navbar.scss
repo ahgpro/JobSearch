@@ -57,6 +57,22 @@ nav a:hover {
   left: 34px;
 }
 
+.fa-envelope-o {
+  font-size: 30px;
+  margin-top: 6px;
+}
 
 
+.menu {
+  position: fixed;
+  top: 0;
+  background: rgba(17, 17, 17, 0.9);
+}
 
+.home .menu {
+  background: transparent;
+}
+
+.home .scrolled {
+  background: rgba(17, 17, 17, 0.9);
+}

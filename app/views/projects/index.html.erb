@@ -1,45 +1,34 @@
 
 <% @projects.each do |project|%>
-
-<div class="project_container">
-
-  <div class="annonce">
-
-
-    <div class="row">
-
-      <div class="col-md-2">
-        <div class="project-picture" style="background-image: url('<%= image_path(project.media) %>');">
+  <div class="project_container">
+    <div class="annonce">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="project-picture" style="background-image: url('<%= image_path(project.media) %>');">
+          </div>
         </div>
-      </div>
-
-      <div class="col-md-6">
-       <div class="title-project">
-          <%= project.title %>
+        <div class="col-md-6">
+         <div class="title-project">
+            <%= project.title %>
+          </div>
         </div>
-      </div>
-
-      <div class="col-md-6">
-       <div class="project-description">
-          <%= project.description %>
+        <div class="col-md-6">
+         <div class="project-description">
+            <%= project.description %>
+          </div>
         </div>
-      </div>
-
-      <div class="col-md-6">
-       <div class="project-link">
-         <%=link_to "See the project", project_path(project) %>
+        <div class="col-md-6">
+         <div class="project-link">
+           <%=link_to "See the project", project_path(project) %>
+          </div>
         </div>
-      </div>
-
-      <div class="col-md-6">
-          <% project.jobs.each do |job| %>
-            <div class="rounded-job col-xs-1" style="background-image: url('<%= image_path(job.picture) %>');">
-              <!-- <div class='div-span'><%= job.name %></div> -->
-            </div>
-          <% end %>
+        <div class="col-md-6">
+            <% project.jobs.each do |job| %>
+              <div class="rounded-job col-xs-1" style="background-image: url('<%= image_path(job.picture) %>');">
+              </div>
+            <% end %>
+        </div>
       </div>
     </div>
   </div>
-
-</div>
 <% end %>
