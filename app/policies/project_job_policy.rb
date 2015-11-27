@@ -6,7 +6,6 @@ class ProjectJobPolicy < ApplicationPolicy
   end
 
   def create?
-    raise
     record.project.user == user
   end
 end
