@@ -4,6 +4,7 @@ class PostulantsController < ApplicationController
   # /projects/:project_id/project_jobs/:project_job_id/postulants
   def create
     @postulant = @project_job.postulants.build(user: current_user)
+    authorize @postulant
     @postulant.save
     redirect_to project_path(@project_job.project)
   end

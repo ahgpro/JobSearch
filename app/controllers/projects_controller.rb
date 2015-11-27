@@ -12,10 +12,12 @@ class ProjectsController < ApplicationController
   end
   def new
     @project = Project.new
+    authorize @project
   end
 
   def create
-    @project = Project.new(project_params)
+    @project = current_user.projects.new(project_params)
+    authorize @project
     if @project.save
       redirect_to @project
 

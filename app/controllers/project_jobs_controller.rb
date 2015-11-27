@@ -9,6 +9,7 @@ class ProjectJobsController < ApplicationController
 
   def create
     @project_job = @project.project_jobs.build(project_job_params)
+    authorize @project_job
     if @project_job.save
       redirect_to project_path(@project)
     else
