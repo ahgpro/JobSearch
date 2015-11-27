@@ -1,2 +1,60 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<header>
+  <div class="headline">
+    <div class="inner">
+      <h1>Welcome</h1>
+      <p>Trouver vos collaborateurs en un seul clic</p>
+      <div class="searchbar">
+        <div class="searchbar-content">
+          <%= simple_form_for :search, :html => { :class => 'form-inline' }, url: projects_path, method: :get do |f| %>
+            <%= f.input :city, placeholder: 'Entrez une ville', class: 'placeholder-font', label: false, :input_html => { :size => 45} %>
+            <%= f.submit "Rechercher", class: 'btn btn-primary' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+ <div class="feature">
+  <div class="description text-center">
+    <div class="row">
+    <div class="col-md-3">
+      <img src="loup.png">
+      <h2>Lorem ipsum</h2>
+      <p>Sed lectus mi, eleifend quis congue non, lacinia id quam. Cras porta pellentesque nulla, ac auctor ligula scelerisque non. In vel placerat lacus. Nam pretium vitae purus et laoreet.</p>
+    </div>
+    <div class="col-md-3">
+      <img src="images/loup.png">
+      <h2>Nulla ilacus</h2>
+      <p>Praesent commodo elit vel massa gravida lacinia. Maecenas auctor dignissim porttitor. Donec tincidunt mi eget semper bibendum. Morbi quis sagittis sapien. Fusce ut ligula purus.</p>
+    </div>
+    <div class="col-md-3">
+      <img src="images/loup.png">
+      <h2>loja emjob</h2>
+      <p>Praesent commodo elit vel massa gravida lacinia. Maecenas auctor dignissim porttitor. Donec tincidunt mi eget semper bibendum. Morbi quis sagittis sapien. Fusce ut ligula purus. N'est il pas?</p>
+    </div>
+    <div class="col-md-3">
+      <img src="images/loup.png">
+      <h2>joko yazza</h2>
+      <p>Praesent commodo elit vel massa gravida lacinia. Maecenas auctor dignissim porttitor. Donec tincidunt mi eget semper bibendum. Morbi quis sagittis sapien. Fusce ut ligula purus de savoir.</p>
+    </div>
+  </div>
+  </div>
+</div>
+
+</section>
+
+
+<div class="pre-container">
+  <div class="main">
+      <h1>Welcome to
+        <span class="city">Bangalore</span>
+      </h1>
+      <div class="get-started btn btn-pri">
+        Get Started
+      </div>
+    </div>
+  </div>
+</div>
+
