@@ -7,6 +7,7 @@
         <div class="searchbar-content">
           <%= simple_form_for :search, :html => { :class => 'form-inline' }, url: projects_path, method: :get do |f| %>
             <%= f.input :city, placeholder: 'Entrez une ville', class: 'placeholder-font', label: false, :input_html => { :size => 45} %>
+            <%= f.input :job_id, collection: Job.all, prompt: "choose a job" %>
             <%= f.submit "Rechercher", class: 'btn btn-primary' %>
           <% end %>
         </div>
