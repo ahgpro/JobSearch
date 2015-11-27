@@ -1,21 +1,20 @@
-<h1>Project#show</h1>
-<p>Find me in app/views/project/show.html.erb</p>
 
 
 <div class="project_container">
   <div class="container">
-    <div class="title-project">
+    <div class="project-media-show" style="background-image: url('<%= image_path(@project.media) %>');">
+
+    <div class="title-project-show">
       <%= @project.title %>
+    </div>
     </div>
     <div class="project-description">
       <%= @project.description %>
-      <div class="rounded-job" style="background-image: url('<%= image_path(@project.media) %>');">
-      </div>
       <div class="row">
 
         <% @project.project_jobs.each do |project_job| %>
-        <div class="col-md-12">
-          <div class="rounded-job" style="background-image: url('<%= image_path(project_job.job.picture) %>');">
+        <div class="col-md-12" "body-show">
+          <div class="rounded-job-show" style="background-image: url('<%= image_path(project_job.job.picture) %>');">
             <div class="job-count"><%= project_job.number %></div>
             <div class='div-span'><%= project_job.job.name %></div>
           </div>
