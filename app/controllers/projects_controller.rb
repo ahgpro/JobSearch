@@ -3,19 +3,21 @@ class ProjectsController < ApplicationController
  before_action :find_project, only: [:show, :destroy]
 
   def index
-    @projects = Project.all
-
+    @projects = policy_scope(Project)
   end
 
   def show
+    @project_job = ProjectJob.new
     @project = Project.find(params[:id])
   end
   def new
     @project = Project.new
+    authorize @project
   end
 
   def create
-    @project = Project.new(project_params)
+    @project = current_user.projects.new(project_params)
+    authorize @project
     if @project.save
       redirect_to @project
 
@@ -34,6 +36,7 @@ class ProjectsController < ApplicationController
 
   def find_project
     @project = Project.find(params[:id])
+    authorize @project
   end
 
   def project_params

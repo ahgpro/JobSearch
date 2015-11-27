@@ -1,26 +1,61 @@
-<h1>Project#show</h1>
-<p>Find me in app/views/project/show.html.erb</p>
 
 
 <div class="project_container">
   <div class="container">
-    <div class="title-project">
+    <div class="project-media-show" style="background-image: url('<%= image_path(@project.media) %>');">
+
+    <div class="title-project-show">
       <%= @project.title %>
+    </div>
     </div>
     <div class="project-description">
       <%= @project.description %>
-       <div class="rounded-job" style="background-image: url('<%= image_path(@project.media) %>');">
-    </div>
-    <div class="row">
+      <div class="row">
 
-      <% @project.jobs.each do |job| %>
-      <div class="col-md-4">
-        <div class="rounded-job" style="background-image: url('<%= image_path(job.picture) %>');">
-         <div class='div-span'><%= job.name %></div>
+        <% @project.project_jobs.each do |project_job| %>
+        <div class="col-md-12" "body-show">
+          <div class="rounded-job-show" style="background-image: url('<%= image_path(project_job.job.picture) %>');">
+            <div class="job-count"><%= project_job.number %></div>
+            <div class='div-span'><%= project_job.job.name %></div>
+          </div>
+          <div class='div-span'><%= project_job.description %></div>
+          <% project_job.postulants.each do |postulant| %>
+          <ul>
+            <li>
+              <%= postulant.user.first_name %>
+              <%= postulant.user.last_name[0] %>.
+              <%= postulant.status %>
+              <%= link_to "Voir le profil", user_path(postulant.user)%>
+            </li>
+
+          </ul>
+          <% end %>
+          <%= link_to "Postuler", project_project_job_postulants_path(@project, project_job.id), method: :post %>
+          <hr>
+
         </div>
+
+        <% end %>
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+    <% if @current_user == @project.user %>
+
+      <%= simple_form_for [@project, @project_job] do |f| %>
+      <%= f.error_notification %>
+      <%= f.input :job_id, collection: Job.all, prompt: "choose a job" %>
+      <%= f.input :number, placeholder: "Quantity of" %>
+      <%= f.input :description, placeholder: "Add a description of the job" %>
+      <%= f.button :submit, class: "btn btn-primary" %>
+      <% end %>
+      <p>
+        <%= link_to "Back", project_path(@project), class: "btn btn-info" %>
+
+      </p>
       <% end %>
     </div>
   </div>
 </div>
-</div>
+
