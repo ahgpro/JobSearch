@@ -1,58 +1,88 @@
-  <div class="cover">
+<div class="cover">
 
-
-    <div class="photo-profile">
+  <div class="photo-profile text-center">
+    <div class="col-md-12">
       <%= image_tag @user.picture, class:"img-circle" %>
     </div>
   </div>
 
-  <%= @user.first_name %>
-
-  <h4>description :</h4>
-
-  <%= @user.description %>
-
-  <h4>skillz :</h4>
-
-  <%= @user.skillz %>
-
-  <h4>Réseaux sociaux :</h4>
-
-  <ul>
-    <li>
-      <% if @user.sociallink1.blank? %>
-      <strong>Twitter</strong> : non renseigné
+  <div class="firstname text-center">
+    <div class="col-md-12">
+      <% if @user.first_name.blank? %>
+      <strong>Name</strong> : non renseigné
       <% else %>
-      <%= link_to @user.sociallink1, target: "_blank" do %>
-      <i class="fa fa-twitter"></i>
+      <%= @user.first_name %>
       <% end %>
-      <% end %>
-    </li>
-    <li>
-      <% if @user.sociallink2.blank? %>
-      <strong>Facebook</strong> : non renseigné
-      <% else %>
-      <%= link_to @user.sociallink2, target: "_blank" do %>
-      <i class="fa fa-facebook"></i>
-      <% end %>
-      <% end %>
-    </li>
-    <li>
-      <% if @user.sociallink3.blank? %>
-      <strong>Linkedin</strong> : non renseigné
-      <% else %>
-      <%= link_to @user.sociallink3, target: "_blank" do %>
-      <i class="fa fa-linkedin"></i>
-      <% end %>
-      <% end %>
-    </li>
-  </ul>
+    </div>
+  </div>
 
-    <% if current_user == @user %>
-          <p><%= link_to edit_user_registration_path do %>
-            <i class="fa fa-pencil-square-o"></i> <%= t ".profile", default: "Modifier mon profil" %>
-            <% end %>
-          </p>
-        <% end %>
+  <div class="description text-center">
+    <div class="col-md-12">
+      <% if @user.description.blank? %>
+      <strong>Description</strong> : non renseigné
+      <% else %>
+      <%= @user.description %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="skillz text-center">
+    <div class="col-md-12">
+      <% if @user.skillz.blank? %>
+      <strong>Skillz</strong> : non renseigné
+      <% else %>
+      <%= @user.skillz %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="reseaux sociaux text-center">
+    <div class="col-md-12">
+      <ul>
+        <li>
+          <% if @user.sociallink1.blank? %>
+          <strong>Twitter</strong> : non renseigné
+          <% else %>
+          <%= link_to @user.sociallink1, target: "_blank" do %>
+          <i class="fa fa-twitter"></i>
+          <% end %>
+          <% end %>
+        </li>
+
+        <li>
+          <% if @user.sociallink2.blank? %>
+          <strong>Facebook</strong> : non renseigné
+          <% else %>
+          <%= link_to @user.sociallink2, target: "_blank" do %>
+          <i class="fa fa-facebook"></i>
+          <% end %>
+          <% end %>
+        </li>
+
+        <li>
+          <% if @user.sociallink3.blank? %>
+          <strong>Linkedin</strong> : non renseigné
+          <% else %>
+          <%= link_to @user.sociallink3, target: "_blank" do %>
+          <i class="fa fa-linkedin"></i>
+          <% end %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="edit-user text-center">
+    <div class="col-md-12">
+      <% if current_user == @user %>
+        <p><%= link_to edit_user_registration_path do %>
+          <i class="fa fa-pencil-square-o"></i> <%= t ".profile", default: "Modifier mon profil" %>
+          <% end %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+
+</div>
 
 
