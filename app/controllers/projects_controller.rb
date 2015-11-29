@@ -1,9 +1,15 @@
 class ProjectsController < ApplicationController
 
- before_action :find_project, only: [:show, :destroy]
+ before_action :find_project, only: [:show, :destroy, :index]
+
+
 
   def index
-    @projects = policy_scope(Project)
+    if params [:search]
+      @projects = Project.find(:all, condition => ['name LIKE ?', "‰#{params[:params]}‰"])
+    else
+      @projects = policy_scope(Project)
+    end
   end
 
   def show
