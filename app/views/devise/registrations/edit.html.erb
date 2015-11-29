@@ -13,8 +13,16 @@
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
+     <%= f.input :picture, label: 'Photo de profil' %>
+
     <%= f.input :first_name, required: true, placeholder:"first name" %>
     <%= f.input :last_name, required: true, placeholder:"last name" %>
+    <%= f.input :description, required: true, placeholder:"description" %>
+     <%= f.input :sociallink1, label: 'Réseau social 1', placeholder: "https://twitter.com/johndoe" %>
+    <%= f.input :sociallink2, label: 'Réseau social 2', placeholder: "https://www.facebook.com/john.doe" %>
+    <%= f.input :sociallink3, label: 'Réseau social 3', placeholder: "https://www.linkedin.com/" %>
+    <%= f.input :skillz, required: true, placeholder:"skillz" %>
+
 
 
     <h4>Change password</h4>

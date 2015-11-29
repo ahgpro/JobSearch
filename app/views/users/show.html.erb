@@ -1,1 +1,58 @@
-caca prout
+  <div class="cover">
+
+
+    <div class="photo-profile">
+      <%= image_tag @user.picture, class:"img-circle" %>
+    </div>
+  </div>
+
+  <%= @user.first_name %>
+
+  <h4>description :</h4>
+
+  <%= @user.description %>
+
+  <h4>skillz :</h4>
+
+  <%= @user.skillz %>
+
+  <h4>Réseaux sociaux :</h4>
+
+  <ul>
+    <li>
+      <% if @user.sociallink1.blank? %>
+      <strong>Twitter</strong> : non renseigné
+      <% else %>
+      <%= link_to @user.sociallink1, target: "_blank" do %>
+      <i class="fa fa-twitter"></i>
+      <% end %>
+      <% end %>
+    </li>
+    <li>
+      <% if @user.sociallink2.blank? %>
+      <strong>Facebook</strong> : non renseigné
+      <% else %>
+      <%= link_to @user.sociallink2, target: "_blank" do %>
+      <i class="fa fa-facebook"></i>
+      <% end %>
+      <% end %>
+    </li>
+    <li>
+      <% if @user.sociallink3.blank? %>
+      <strong>Linkedin</strong> : non renseigné
+      <% else %>
+      <%= link_to @user.sociallink3, target: "_blank" do %>
+      <i class="fa fa-linkedin"></i>
+      <% end %>
+      <% end %>
+    </li>
+  </ul>
+
+    <% if current_user == @user %>
+          <p><%= link_to edit_user_registration_path do %>
+            <i class="fa fa-pencil-square-o"></i> <%= t ".profile", default: "Modifier mon profil" %>
+            <% end %>
+          </p>
+        <% end %>
+
+
