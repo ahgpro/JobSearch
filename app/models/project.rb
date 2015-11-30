@@ -9,6 +9,9 @@ class Project < ActiveRecord::Base
 
   mount_uploader :media, MediaUploader
 
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+
   # validates :user_id, presence: true
   # validates :title, presence: true
   # validates :description, presence: true
