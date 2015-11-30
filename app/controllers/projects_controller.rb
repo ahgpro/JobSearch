@@ -31,12 +31,10 @@ class ProjectsController < ApplicationController
     authorize @project
     if @project.save
       redirect_to @project
-
     else
       render :new
     end
   end
-
 
   def destroy
     @project.destroy
