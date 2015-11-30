@@ -28,9 +28,11 @@ class ProjectJobsController < ApplicationController
   def project_job_params
     params.require(:project_job).permit(:job_id, :number, :description)
   end
+
   def find_project
     @project = Project.find(params[:project_id])
   end
+
 end
 
 
