@@ -1,12 +1,12 @@
 class ProjectsController < ApplicationController
 
- before_action :find_project, only: [:show, :destroy, :index]
+ before_action :find_project, only: [:show, :destroy]
 
 
 
   def index
-    if params [:search]
-      @projects = Project.find(:all, condition => ['name LIKE ?', "‰#{params[:params]}‰"])
+    if params[:search] and (not params[:search][:job].blank? or not params[:search][:address].blank?)
+      @projects = Project.where(job: params[:job] || address: params[:address])
     else
       @projects = policy_scope(Project)
     end
@@ -41,12 +41,13 @@ class ProjectsController < ApplicationController
   private
 
   def find_project
-    @project = Project.find(params[:id])
+    @project = Project.find(project_params[:id])
     authorize @project
   end
 
   def project_params
-    params.require(:project).permit(:title, :description, :media)
+    params.permit(:job, :title, :description, :media, :id)
   end
 
 end
+

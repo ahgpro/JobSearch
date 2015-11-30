@@ -78,7 +78,7 @@ puts "- Seed Projects"
 owners = User.limit(6)
 
 owners.each do |owner|
-  owner.projects.create(title: Faker::Book.title, description: Faker::Lorem.paragraph, remote_media_url:'https://unsplash.it/200/300/?random')
+  owner.projects.create(title: Faker::Book.title, description: Faker::Lorem.paragraph, remote_media_url:'https://unsplash.it/200/300/?random', address: Faker::Address.city, latitude: Faker::Address.latitude, longitude: Faker::Address.longitude)
 end
 
 puts "- Seed ProjectJobs"
