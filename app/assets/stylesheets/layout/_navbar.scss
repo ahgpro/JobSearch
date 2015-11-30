@@ -4,10 +4,8 @@ nav {
   z-index: 10;
 }
 
-#logo-jobsearch {
-  float: left;
 
-}
+
 nav.scrolled {
   background: rgba(17, 17, 17, 0.9);
 }
@@ -36,9 +34,9 @@ nav a:hover {
   color: #ededed;
 }
 
-.logo {
-  height: 75px;
+.logo-jobsearch {
   float: left;
+
 }
 .logo:before, .logo:after {
   position: absolute;
@@ -58,8 +56,8 @@ nav a:hover {
 }
 
 .fa-envelope-o {
-  font-size: 30px;
-  margin-top: 6px;
+  font-size: 20px;
+  margin-top: 0px;
 }
 
 

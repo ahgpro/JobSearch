@@ -15,13 +15,14 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'faker'
+gem 'faker_extension_fr'
 
 gem 'carrierwave'
 gem 'cloudinary'
 
 gem 'omniauth-facebook'
-gem 'figaro'
 gem 'pundit'
+gem 'geocoder'
 
 group :development, :test do
   gem 'binding_of_caller'
@@ -29,7 +30,7 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'pry-byebug'
   gem 'pry-rails'
-  gem 'spring'
+  # gem 'spring'
 end
 
 group :production do
