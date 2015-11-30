@@ -20,8 +20,8 @@ gem 'carrierwave'
 gem 'cloudinary'
 
 gem 'omniauth-facebook'
-gem 'figaro'
 gem 'pundit'
+gem 'geocoder'
 
 group :development, :test do
   gem 'binding_of_caller'
