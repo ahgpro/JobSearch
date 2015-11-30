@@ -76,6 +76,9 @@ GEM
     execjs (2.6.0)
     faker (1.5.0)
       i18n (~> 0.5)
+    faker_extension_fr (0.0.18)
+      faker
+      rails (>= 3.1)
     faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
     figaro (1.1.1)
@@ -224,6 +227,7 @@ DEPENDENCIES
   cloudinary
   devise
   faker
+  faker_extension_fr
   figaro
   font-awesome-sass
   geocoder

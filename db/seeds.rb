@@ -73,12 +73,24 @@ users.each do |user|
   )
 end
 
-
 puts "- Seed Projects"
 owners = User.limit(6)
 
 owners.each do |owner|
-  owner.projects.create(title: Faker::Book.title, description: Faker::Lorem.paragraph, remote_media_url:'https://unsplash.it/200/300/?random', address: Faker::Address.city, latitude: Faker::Address.latitude, longitude: Faker::Address.longitude)
+  address = Faker::Address.fr_zip_and_city_in_departement(33)
+  start_date = rand(-2.month..2.month).ago
+  end_date = start_date + rand(2.hours..6.month)
+
+  owner.projects.create(
+    title: Faker::Book.title,
+    description: Faker::Lorem.paragraph,
+    remote_media_url:'https://unsplash.it/200/300/?random',
+    address: address[0] + " " + address[1],
+    latitude: address[2],
+    longitude: address[3],
+    start_date: start_date,
+    end_date: end_date
+  )
 end
 
 puts "- Seed ProjectJobs"

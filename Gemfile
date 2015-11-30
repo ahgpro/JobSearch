@@ -15,6 +15,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'faker'
+gem 'faker_extension_fr'
 
 gem 'carrierwave'
 gem 'cloudinary'
