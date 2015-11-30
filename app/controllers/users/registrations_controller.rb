@@ -3,7 +3,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   protected
 
   def update_resource(resource, params)
-    resource.update_without_password(params)
+    resource.update_without_password(account_update_params)
   end
 
   private
