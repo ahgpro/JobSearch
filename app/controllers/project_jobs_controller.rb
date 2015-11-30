@@ -34,7 +34,5 @@ class ProjectJobsController < ApplicationController
 
 end
 
-end
-
 
 
