@@ -17,6 +17,9 @@ gem 'autoprefixer-rails'
 gem 'faker'
 gem 'faker_extension_fr'
 
+gem 'aws-sdk'
+gem 'paperclip'
+
 gem 'carrierwave'
 gem 'cloudinary'
 
