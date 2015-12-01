@@ -28,6 +28,7 @@
           </div>
         </div>
         <div class="col-md-6">
+          <%= project.jobs.map(&:name).join(',') %>
             <% project.jobs.each do |job| %>
               <div class="rounded-job col-xs-1" style="background-image: url('<%= image_path(job.picture) %>');">
               </div>
