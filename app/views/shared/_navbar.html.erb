@@ -1,17 +1,21 @@
 <nav class="menu">
+
   <div class="logo-jobsearch">
     <%= link_to root_path do %>
     <%= image_tag "logo2.png", width: 50%>
     <% end %>
   </div>
+
   <ul id="menu">
-    <% if user_signed_in? %>
+
       <li>
         <div class="button-holder">
-        <%= link_to new_project_path do %>
-        <a class="button outline">Add project<span class="lines"></span></a></div>
-        <% end %>
-      </li>
+          <p><%= link_to "New project", new_project_path(), class: "btn btn-info" %></p>
+        </div>
+      </li>`
+
+      <% if user_signed_in? %>
+
       <li>
         <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
         <div class="icon-badge-container">
@@ -20,10 +24,11 @@
         </div>
         <% end %>
       </li>
+
       <li>
         <div class="navbar-wagon-item">
           <div class="dropdown">
-            <%= cl_image_tag current_user.picture, width: 50, height: 50, crop: :fill, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+            <%= cl_image_tag current_user.picture, width: 40, height: 40, crop: :fill, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
             <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
               <li>
                 <%= link_to user_path(current_user) do %>
@@ -45,11 +50,15 @@
         </div>
       </div>
     </li>
+
     <% else %>
+
     <li>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     </li>
+
     <% end %>
+
   </ul>
 </nav>
 

@@ -1,5 +1,8 @@
 class Project < ActiveRecord::Base
 
+  after_create :send_project_validation_email
+
+
 
   belongs_to :user
   has_many :project_jobs, dependent: :destroy
@@ -16,4 +19,10 @@ class Project < ActiveRecord::Base
   # validates :user_id, presence: true
   # validates :title, presence: true
   # validates :description, presence: true
+  private
+
+  def send_project_validation_email
+    ProjectMailer.creation_confirmation(self).deliver_now
+  end
+
 end

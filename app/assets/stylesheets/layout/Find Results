@@ -1,0 +1,17 @@
+Searching 146 files for ".avatar"
+
+/Users/Nixem/Desktop/JobSearch/JobSearch/app/assets/stylesheets/components/_avatars.scss:
+    1: .avatar {
+    2    width: 40px;
+    3    border-radius: 50%;
+    4    border-top: 5px;
+    5  }
+    6: .avatar-bordered {
+    7    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    8    border: white 1px solid;
+    9  }
+   10: .avatar-large {
+   11    width: 50px;
+   12  }
+
+3 matches in 1 file
