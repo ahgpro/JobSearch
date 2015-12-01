@@ -5,10 +5,27 @@ class ProjectsController < ApplicationController
 
 
   def index
-    if params[:search] and (not params[:search][:job].blank? or not params[:search][:address].blank?)
-      # @projects = Project.where(job: params[:job] || address: params[:address])
-    else
-      @projects = policy_scope(Project)
+    # if params[:search] and (not params[:search][:job].blank? or not params[:search][:address].blank?)
+    # if params[:search][:jobs] && params[:search][:address]
+    #   @projects = Project.where(address: params[:search][:address]) && Project.where(jobs: params[:search][:jobs])
+    # elsif params[:search][:address]
+    #   @projects = Project.where(jobs: params[:search][:jobs])
+    # elsif params[:search][:jobs]
+      # @projects = Project.where(address: params[:search][:address])
+
+    @projects = policy_scope(Project).includes(:jobs)
+
+    if params[:search] and (not params[:search][:job_id].blank? or not params[:search][:address].blank?)
+
+      if not params[:search][:address].blank?
+        @projects = @projects.near(params[:search][:address], 100)
+      end
+
+      if not params[:search][:job_id].blank?
+        @projects = @projects.select do |project|
+          project.jobs.where(id: params[:search][:job_id]).count > 0
+        end
+      end
     end
   end
 
@@ -16,6 +33,7 @@ class ProjectsController < ApplicationController
     @project_job = ProjectJob.new
     @project = Project.find(params[:id])
   end
+
   def new
     @project = Project.new
     authorize @project
@@ -26,12 +44,10 @@ class ProjectsController < ApplicationController
     authorize @project
     if @project.save
       redirect_to @project
-
     else
       render :new
     end
   end
-
 
   def destroy
     @project.destroy
@@ -41,13 +57,12 @@ class ProjectsController < ApplicationController
   private
 
   def find_project
-    @project = Project.find(project_params[:id])
+    @project = Project.find(params[:id])
     authorize @project
   end
 
   def project_params
-    params.permit(:job, :title, :description, :media, :id)
+    params.require(:project).permit(:title, :description, :media)
   end
 
 end
-
