@@ -17,6 +17,30 @@ class ProjectJobsController < ApplicationController
     end
   end
 
+  # def validate_candidate
+
+    # if @postulant.project_job.add?
+    #   candidate = @postulant.new
+    #   candidate.save
+    # end
+
+    # if @postulant.project_job.add?
+    #   candidate = Candidate.new
+    #   candidate.save
+    # end
+
+    # if @postulant.project_job.add?
+    #   postulant = Postulant.new
+    #   postulant.save
+    # end
+
+    # if @postulant(params[:id]).project_job.add?
+    #   postulant = Postulant.new
+    #   postulant.save
+    # end
+
+  # end
+
   def destroy
     @project_job = ProjectJob.find(params[:id])
     @project_job.destroy
