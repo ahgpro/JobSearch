@@ -1,21 +1,5 @@
-<header class="header">
-  <div class="headline">
-    <div class="inner">
-      <h1>Welcome</h1>
-      <p>Trouver vos collaborateurs en un seul clic</p>
-      <div class="searchbar">
-        <div class="searchbar-content">
-          <%= simple_form_for :search, :html => { :class => 'form-inline' }, url: projects_path, method: :get do |f| %>
-            <%= f.input :address, placeholder: 'Entrez une ville', class: 'placeholder-font', label: false, :input_html => { :size => 45} %>
-            <%= f.input :job_id, collection: Job.all, prompt: "choose a job" %>
-            <%= f.submit "Rechercher", class: 'btn btn-primary' %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
-<section>
+<%= render 'header' %>
+ <section>
  <div class="feature">
   <div class="description text-center">
     <div class="row">

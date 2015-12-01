@@ -1,0 +1,75 @@
+.header{
+
+}
+
+.title-home {
+
+}
+.searchbar {
+
+}
+
+.body {
+  font-family: 'Raleway', sans-serif;
+}
+.searchbar-content {
+
+}
+
+.form-home {
+  width: 200px;
+  float: right;
+  margin-right: 240px;
+  background-color: #F7F7F7;
+  padding: 30px 10px 30px 10px;
+  border-radius: 5%;
+  margin-top: -130px;
+}
+
+.background {
+  background-image: image-url("guitar.gif");
+  text-align: center;
+  background-position: center left;
+  background-repeat: no-repeat;
+  background-color: #23447B;
+}
+
+.filter-background {
+  background-color: rgba(0,0,0,0);
+}
+
+.title-logo {
+  font-weight: 900;
+  font-family: 'Raleway', sans-serif;
+  color: #F7F7F7;
+  text-align: center;
+  padding: 290px 0;
+/*  position: relative;
+  margin-top: 50%;*/
+}
+
+.title-form {
+  color: grey;
+  margin-bottom: 20px;
+}
+
+
+.btn-home {
+  text-align:center;
+  padding:20px;
+  font-size: 30px;
+
+  a {
+    color: white;
+    text-transform: none;
+
+    &:hover {
+      text-transform: none;
+    }
+  }
+}
+
+.btn-danger {
+background-color:#FD8A17;
+border-color:#FD8A17;
+}
