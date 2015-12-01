@@ -153,6 +153,15 @@
 #cssmenu.small-screen #menu-indicator {
   display: none;
 }
+// __________________________________________________________
+
+.squid{
+  background-image: url("octopus.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 70px;
+  margin-left: 5px;
+}
 
 .avatar {
   width: 45px;
