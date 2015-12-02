@@ -15,6 +15,30 @@ class PostulantsController < ApplicationController
     redirect_to project_path(@postulant.project_job_id)
   end
 
+  def new
+
+  end
+
+  def accepted
+    @postulant = Postulant.find(params[:id])
+    @postulant.status = true
+    @postulant.save
+    authorize @postulant
+    @project_job = @postulant.project_job
+    @project_job.number -= 1
+    @project_job.save
+    redirect_to :back
+  end
+
+  def rejected
+    @postulant = Postulant.find(params[:id])
+    @postulant.status = false
+    @postulant.save
+    authorize @postulant
+    redirect_to :back
+  end
+
+
   private
 
   def set_project_job

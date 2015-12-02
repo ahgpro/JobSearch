@@ -1,6 +1,5 @@
 class Project < ActiveRecord::Base
 
-  after_create :send_project_validation_email
 
 
 
