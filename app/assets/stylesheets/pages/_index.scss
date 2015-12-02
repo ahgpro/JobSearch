@@ -6,31 +6,34 @@ ul {
   display: inline;
 }
 
-.project_container {
-  padding-top: 20px;
-  padding-bottom: 20px;
+.card-index {
+  padding: 20px;
+    /* padding-bottom: 20px; */
   margin-top: 5px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 5px;
-  border: 1px solid #d6d2cb;
+  margin: 48px;
+  border: 6px solid #F7F7F7;
   border-radius: 10px;
+  height: 393px;
 }
 
 .title-project {
-  margin-left: 20px;
-  text-align: left;
-  color: #100060;
-  font-size: 40px;
+  text-align: center;
+  color: #5F9EA0;
+  font-size: 30px;
+  font-weight: 900;
+  font-family: raleway;
+  text-shadow: -1px 0 #F7F7F7, 0 1px #F7F7F7, 1px 0 white, 0 -1px #F7F7F7;
 }
 
 
 
 .project-description {
-  color:#000;
+  color: #F7F7F7;
   margin-left: 20px;
   padding-top: 10px;
   text-align: left;
+  font-family: raleway;
+  font-size: small;
 }
 
 .project-link {
@@ -42,27 +45,31 @@ ul {
 
 .project-picture {
 
-  margin-left: 20px;
-  border-radius: 100%;
-  width: 200px;
-  height: 200px;
-  padding: 5px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // margin-left: 20px;
+  // border-radius: 100%;
+  // width: 200px;
+  // height: 200px;
+  // padding: 5px;
 
 }
 
 .rounded-job {
   background-color: white;
-  background-position:left;
+  background-position: left;
   background-size: cover;
   border-radius: 50%;
   text-align: center;
   width: 50px;
   height: 50px;
   padding: 5px;
-
-
+  border-style: solid;
+  border-color: rgba(214, 200, 191, 0.54);
+    /* bottom: 69px; */
+  margin-left: -47px;
+  margin-bottom: 4px;
 }
-
 .job-list {
 }
 
