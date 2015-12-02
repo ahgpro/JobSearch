@@ -6,72 +6,45 @@ ul {
   display: inline;
 }
 
-.card-index {
-  padding: 0px;
-    /* padding-bottom: 20px; */
+.card-project {
+  position: relative;
   margin-top: 5px;
-  margin: 48px;
+  margin: 10px 20px ;
   border: 6px solid #F7F7F7;
   border-radius: 10px;
   height: 393px;
-}
-
-.title-project {
-  text-align: center;
-  color: #5F9EA0;
-  font-size: 30px;
-  font-weight: 900;
-  font-family: raleway;
-  // text-shadow: -1px 0 #F7F7F7, 0 1px #F7F7F7, 1px 0 white, 0 -1px #F7F7F7;
-}
-
-
-
-.project-description {
-  color: #F7F7F7;
-  margin-left: 20px;
-  padding-top: 10px;
-  text-align: left;
-  font-family: raleway;
-  font-size: small;
-}
-
-.project-link {
-  background-color: white;
-  background-size: cover;
-  height: 54px;
-  width: 100%;
-  padding-top: 15px;
-  top: -205px;
-  position: absolute;
-  text-align: center;
-  font-family: raleway;
-  font-weight: 900;
-  font-variant: small-caps
-}
-
-.unfiltered {
- position: absolute;
- background-size: 100%;
-     top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-}
-
-.project-picture {
-
   background-repeat: no-repeat;
   background-size: cover;
-  // margin-left: 20px;
-  // border-radius: 100%;
-  // width: 200px;
-  // height: 200px;
-  // padding: 5px;
-
-  &:before {
-    content: "";
+  &-title {
+    text-align: center;
+    color: #5F9EA0;
+    font-size: 30px;
+    font-weight: 900;
+    font-family: raleway;
+  }
+  &-description {
+    color: #F7F7F7;
+    margin-left: 20px;
+    padding-top: 10px;
+    text-align: left;
+    font-family: raleway;
+    font-size: small;
+  }
+  &-bottom {
+    bottom: 0px;
+    position: absolute;
+    width: 100%;
+  }
+  &-link {
+    background-color: white;
+    background-size: cover;
+    padding: 15px 0;
+    text-align: center;
+    font-family: raleway;
+    font-weight: 900;
+    font-variant: small-caps
+  }
+  &-filter {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -80,8 +53,11 @@ ul {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
   }
-
+  &-jobs {
+    text-align: center;
+  }
 }
+
 
 .rounded-job {
     background-color: white;
