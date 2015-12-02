@@ -1,24 +1,23 @@
 
-  <% @projects.each do |project|%>
-    <div class="col-md-3 card-index project-picture" style="background-image: url('<%= image_path(project.media) %>');">
-      <div class="project-picture" >
-      </div>
+<% @projects.each do |project|%>
+  <div class="col-md-3 card-index project-picture" style="background-image: url('<%= image_path(project.media) %>');">
+    <div class="unfiltered">
       <div class="title-project">
         <%= project.title %>
       </div>
-
-      <% project.jobs.each do |job| %>
-      <div class="rounded-job" style="background-image: url('<%= image_path(job.picture) %>');">
-      </div>
-      <% end %>
       <div class="project-description">
         <%= project.description %>
       </div>
       <div class="project-link">
-        <%=link_to "See the project", project_path(project) %>
+        <%=link_to "see more ", project_path(project) %>
       </div>
+      <% project.jobs.each do |job| %>
+      <div class="rounded-job col-md-1" style="background-image: url('<%= image_path(job.picture) %>');">
+      </div>
+      <% end %>
     </div>
-  <% end %>
+  </div>
+<% end %>
 
 
 

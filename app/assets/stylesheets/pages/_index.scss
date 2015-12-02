@@ -7,7 +7,7 @@ ul {
 }
 
 .card-index {
-  padding: 20px;
+  padding: 0px;
     /* padding-bottom: 20px; */
   margin-top: 5px;
   margin: 48px;
@@ -22,7 +22,7 @@ ul {
   font-size: 30px;
   font-weight: 900;
   font-family: raleway;
-  text-shadow: -1px 0 #F7F7F7, 0 1px #F7F7F7, 1px 0 white, 0 -1px #F7F7F7;
+  // text-shadow: -1px 0 #F7F7F7, 0 1px #F7F7F7, 1px 0 white, 0 -1px #F7F7F7;
 }
 
 
@@ -37,11 +37,28 @@ ul {
 }
 
 .project-link {
-  margin-top: 5px;
-  margin-left: 20px;
-  text-align: left;
+  background-color: white;
+  background-size: cover;
+  height: 54px;
+  width: 100%;
+  padding-top: 15px;
+  top: -205px;
+  position: absolute;
+  text-align: center;
+  font-family: raleway;
+  font-weight: 900;
+  font-variant: small-caps
 }
 
+.unfiltered {
+ position: absolute;
+ background-size: 100%;
+     top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+}
 
 .project-picture {
 
@@ -53,22 +70,33 @@ ul {
   // height: 200px;
   // padding: 5px;
 
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
 }
 
 .rounded-job {
-  background-color: white;
-  background-position: left;
-  background-size: cover;
-  border-radius: 50%;
-  text-align: center;
-  width: 50px;
-  height: 50px;
-  padding: 5px;
-  border-style: solid;
-  border-color: rgba(214, 200, 191, 0.54);
-    /* bottom: 69px; */
-  margin-left: -47px;
-  margin-bottom: 4px;
+    background-color: white;
+    background-position: left;
+    background-size: cover;
+    border-radius: 50%;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    border-style: solid;
+    border-color: rgba(214, 200, 191, 0.54);
+    bottom: px;
+    margin-left: 5px;
+    margin-bottom: 4px;
 }
 .job-list {
 }
