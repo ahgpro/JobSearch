@@ -1,40 +1,58 @@
+<div id="search-index">
+  <form class="form-inline">
+    <div class="searchbar">
+      <div class="searchbar-content">
+        <%= simple_form_for :search, :html => { :class => 'form-inline' }, url:projects_path, method: :get do |f| %>
+        <%= f.input :address, placeholder: 'Wich city ?', label: false, :input_html => { :size => 45} %>
+        <%= f.input :domain_id, collection: Domain.all, label_method: :label, value_method: :id, label: false, prompt: "Choose your Domain " %>
+        <%= f.input :job_id, label: false do %>
+        <%= f.select :job_id, Job.all.map { |job| [job.name, job.id, { :'data-domain-id' => job.domain.id }] }, class: "form-control", prompt: "Choose a job", html: { class: "form-control" } %>
+        <% end %>
+        <%= f.submit "Search", class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    </div>
+  </form>
+</div>
 
-<% @projects.each do |project|%>
-  <div class="project_container">
-    <div class="annonce">
-      <div class="row">
-        <div class="col-md-2">
-          <div class="project-picture" style="background-image: url('<%= image_path(project.media) %>');">
-          </div>
-        </div>
-        <div class="col-md-6">
-         <div class="title-project">
+<div class="container">
+  <div class="row">
+    <% @projects.each do |project|%>
+    <div class="col-md-4">
+      <div class="card-project" style="background-image: url('<%= image_path(project.media) %>');">
+        <div class="card-project-filter">
+          <div class="card-project-title">
             <%= project.title %>
           </div>
-        </div>
-        <div class="col-md-6">
-         <div class="project-description">
-            <%= project.description %>
-          </div>
-        </div>
-        <div class="col-md-6">
-         <div >
+          <div class="card-project-address">
             <%= project.address %>
           </div>
-        </div>
-        <div class="col-md-6">
-         <div class="project-link">
-           <%=link_to "See the project", project_path(project) %>
+          <div class="card-project-startdate">
+            <%= project.start_date %>
           </div>
-        </div>
-        <div class="col-md-6">
-          <%= project.jobs.map(&:name).join(',') %>
-            <% project.jobs.each do |job| %>
-              <div class="rounded-job col-xs-1" style="background-image: url('<%= image_path(job.picture) %>');">
-              </div>
-            <% end %>
+          <div class="card-project-description">
+            <%= project.description %>
+          </div>
+
+          <div class="card-project-bottom">
+            <div class="card-project-jobs">
+              <% project.jobs.first(6).each do |job| %>
+              <%= image_tag(job.picture, class: "rounded-job") %>
+              <% end %>
+            </div>
+            <div class="card-project-link">
+              <%=link_to "see more ", project_path(project) %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    <% end %>
   </div>
+</div>
+
+<% content_for(:after_js) do %>
+<script>
+$("#search_job_id").addClass("form-control")
+</script>
 <% end %>

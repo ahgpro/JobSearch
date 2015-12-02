@@ -7,9 +7,9 @@ class UserMailer < ApplicationMailer
   #
   def welcome(user)
 
-    @user = user
+    # @user = user
 
-    mail to: @user.email, subject: "Bonjour #{@user.first_name}"
+    # mail to: @user.email, subject: "Bonjour #{@user.first_name}"
 
   end
 end

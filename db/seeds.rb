@@ -74,7 +74,7 @@ users.each do |user|
 end
 
 puts "- Seed Projects"
-owners = User.limit(6)
+owners = User.limit(14)
 
 owners.each do |owner|
   address = Faker::Address.fr_zip_and_city_in_departement(33)

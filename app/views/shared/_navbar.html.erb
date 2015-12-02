@@ -1,21 +1,16 @@
 <nav class="menu">
-
   <div class="logo-jobsearch">
     <%= link_to root_path do %>
     <%= image_tag "logo2.png", width: 50%>
     <% end %>
   </div>
-
   <ul id="menu">
-
       <li>
         <div class="button-holder">
           <p><%= link_to "New project", new_project_path(), class: "btn btn-info" %></p>
         </div>
       </li>`
-
       <% if user_signed_in? %>
-
       <li>
         <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
         <div class="icon-badge-container">
@@ -24,7 +19,6 @@
         </div>
         <% end %>
       </li>
-
       <li>
         <div class="navbar-wagon-item">
           <div class="dropdown">
@@ -50,15 +44,11 @@
         </div>
       </div>
     </li>
-
     <% else %>
-
     <li>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     </li>
-
     <% end %>
-
   </ul>
 </nav>
 

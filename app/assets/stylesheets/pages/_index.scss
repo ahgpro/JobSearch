@@ -6,63 +6,93 @@ ul {
   display: inline;
 }
 
-.project_container {
-  padding-top: 20px;
-  padding-bottom: 20px;
+.card-project {
+  position: relative;
   margin-top: 5px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 5px;
-  border: 1px solid #d6d2cb;
+  margin: 10px 20px ;
+  border: 6px solid #F7F7F7;
   border-radius: 10px;
+  height: 393px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  &-title {
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 30px;
+    font-weight: 900;
+    font-family: raleway;
+    margin-top: 10px;
+  }
+  &-description {
+    color: #F7F7F7;
+    margin-left: 20px;
+    padding-top: 10px;
+    text-align: left;
+    font-family: raleway;
+    font-size: small;
+    margin-right: 20px;
+  }
+  &-address {
+    color: #F7F7F7;
+    margin-left: 20px;
+    padding-top: 10px;
+    text-align: left;
+    font-family: raleway;
+    font-size: small;
+  }
+   &-startdate {
+    color: #F7F7F7;
+    margin-left: 20px;
+    padding-top: 10px;
+    text-align: left;
+    font-family: raleway;
+    font-size: small;
+  }
+  &-bottom {
+    bottom: 0px;
+    position: absolute;
+    width: 100%;
+  }
+  &-link {
+    background-color: white;
+    background-size: cover;
+    padding: 15px 0;
+    text-align: center;
+    font-family: raleway;
+    font-weight: 900;
+    font-variant: small-caps
+  }
+  &-filter {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  &-jobs {
+    text-align: center;
+    margin-bottom: 15px;
+  }
 }
 
-.title-project {
-  margin-left: 20px;
-  text-align: left;
-  color: #100060;
-  font-size: 40px;
-}
-
-
-
-.project-description {
-  color:#000;
-  margin-left: 20px;
-  padding-top: 10px;
-  text-align: left;
-}
-
-.project-link {
-  margin-top: 5px;
-  margin-left: 20px;
-  text-align: left;
-}
-
-
-.project-picture {
-
-  margin-left: 20px;
-  border-radius: 100%;
-  width: 200px;
-  height: 200px;
-  padding: 5px;
-
-}
 
 .rounded-job {
-  background-color: white;
-  background-position:left;
-  background-size: cover;
-  border-radius: 50%;
-  text-align: center;
-  width: 50px;
-  height: 50px;
-  padding: 5px;
-
-
+    background-color: white;
+    background-position: left;
+    background-size: cover;
+    border-radius: 50%;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    border-style: solid;
+    border-color: rgba(214, 200, 191, 0.54);
+    bottom: px;
+    margin-left: 5px;
+    margin-bottom: 4px;
 }
-
 .job-list {
 }
 
