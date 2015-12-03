@@ -43,7 +43,6 @@ class ProjectsController < ApplicationController
     @project = current_user.projects.new(project_params)
     authorize @project
     if @project.save
-      ProjectMailer.creation_confirmation(@project).deliver_now
       redirect_to @project
     else
       render :new
@@ -51,11 +50,10 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
+    # @project_job_id.applicant.destroy
     @project.destroy
     redirect_to projects_path
   end
-
-
 
   private
 

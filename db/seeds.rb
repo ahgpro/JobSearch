@@ -20,7 +20,7 @@ domains = [
   {
     label: "video",
     jobs: [
-      { name: "cameraman", picture: "monteur.jpg" },
+      { name: "cameraman", picture: "monteur.png" },
       { name: "perchiste", picture: "perchiste.jpg" },
       { name: "assistant-monteur", picture: "monteur-video.png" },
       { name: "monteur", picture: "" },

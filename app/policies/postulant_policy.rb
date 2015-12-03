@@ -8,4 +8,12 @@ class PostulantPolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def accepted?
+    true
+  end
+
+  def rejected?
+    true
+  end
 end

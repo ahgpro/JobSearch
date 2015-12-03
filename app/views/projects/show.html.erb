@@ -1,44 +1,100 @@
-
-
-<div class="project_container">
-  <div class="container">
+<div class="">
+  <div class="">
     <div class="project-media-show" style="background-image: url('<%= image_path(@project.media) %>');">
       <div class="title-project-show">
         <%= @project.title %>
       </div>
     </div>
-    <div class="project-description">
+    <div class="container">
       <%= @project.description %>
-        <div class="row">
-          <% @project.project_jobs.each do |project_job| %>
-            <div class="col-md-12" "body-show">
-              <div class="rounded-job-show" style="background-image: url('<%= image_path(project_job.job.picture) %>');">
-                <div ><%= project_job.postulants.count %>postulants pour ce project.</div>
-                <div class="job-count"><%= project_job.number %></div>
-                <div class='div-span'><%= project_job.job.name %></div>
-              </div>
-              <div class='div-span'><%= project_job.description %></div>
-              <% if @current_user == @project.user %>
+      <div class="row">
+        <% @project.project_jobs.each do |project_job| %>
+          <div class="job-content col-sm-3">
+            <% if project_job.job != nil %>
+                <ul>
+                  <li class="img-job-icon">
+                    <%= image_tag(project_job.job.picture) %>
+                  </li>
+                  <li>
+                    <%= project_job.postulants.count %> postulants pour ce project.
+                  </li>
+                  <li>
+                    <% if project_job.number <= 1 %>
+                    <%= project_job.job.name %> (Sold-out)
+                    <% else %>
+                    <%= project_job.job.name %> (postes disponibles : <%= project_job.number %>)
+                    <% end %>
+                  </li>
+                </ul>
+            <% end %>
+
+            <%= project_job.description %>
+
+            <% if @current_user == @project.user %>
+              <p>Candidatures en attente</p>
+              <ul>
                 <% project_job.postulants.each do |postulant| %>
-                  <ul>
-                    <li>
-                      <%= postulant.user.first_name %>
-                      <%= postulant.user.last_name[0] %>.
-                      <%= postulant.status %>
-                      <%= link_to "Voir le profil", user_path(postulant.user)%>
-                    </li>
-                  </ul>
+                <li>
+                  <% if postulant.status == nil %>
+                    <%= link_to(user_path(postulant.user)) do %>
+                      <%= postulant.user.first_name.capitalize %>
+                      <%= postulant.user.last_name[0].capitalize %>.
+                    <% end %>
+                    <%= link_to(accepted_path(@project.id, postulant), method: :post) do %>
+                      <i class="fa fa-check"></i>
+                    <% end %> |
+                    <%= link_to(rejected_path(@project.id, postulant), method: :post) do %>
+                      <i class="fa fa-times"></i>
+                    <% end %>
+                  <% end %>
+                </li>
                 <% end %>
-              <% end %>
-            <%= link_to "Postuler", project_project_job_postulants_path(@project, project_job.id), method: :post %>
+              </ul>
+
+              <p>Candidatures acceptées</p>
+              <ul>
+                <% project_job.postulants.each do |postulant| %>
+                <li>
+                  <% if postulant.status == true %>
+                    <%= link_to(user_path(postulant.user)) do %>
+                      <%= postulant.user.first_name.capitalize %>
+                      <%= postulant.user.last_name[0].capitalize %>.
+                      <%= link_to(rejected_path(@project.id, postulant), method: :post) do %>
+                        <i class="fa fa-times"></i>
+                      <% end %>
+                    <% end %>
+                  <% end %>
+                </li>
+                <% end %>
+              </ul>
+
+              <p>Candidatures refusées</p>
+              <ul>
+                <% project_job.postulants.each do |postulant| %>
+                <li>
+                  <% if postulant.status == false %>
+                    <%= link_to(user_path(postulant.user)) do %>
+                      <%= postulant.user.first_name.capitalize %>
+                      <%= postulant.user.last_name[0].capitalize %>.
+                      <%= link_to(accepted_path(@project.id, postulant), method: :post) do %>
+                        <i class="fa fa-check"></i>
+                      <% end %>
+                    <% end %>
+                  <% end %>
+                </li>
+                <% end %>
+              </ul>
+            <% end %>
+            <% if @current_user != @project.user %>
+              <%= link_to "Postuler", project_project_job_postulants_path(@project, project_job.id), method: :post, class:"btn btn-default" %>
+            <% end %>
           </div>
         <% end %>
       </div>
     </div>
   </div>
-
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+  <div class="">
+    <div class="">
       <% if @current_user == @project.user %>
         <%= simple_form_for [@project, @project_job] do |f| %>
         <%= f.error_notification %>
@@ -46,8 +102,8 @@
         <%= f.input :number, placeholder: "Quantity of" %>
         <%= f.input :description, placeholder: "Add a description of the job" %>
         <%= f.button :submit, class: "btn btn-primary" %>
-      <% end %>
-        <p><%= link_to "Back", project_path(@project), class: "btn btn-info" %></p>
+        <% end %>
+        <%= link_to "Back", project_path(@project), class: "btn btn-info" %>
       <% end %>
     </div>
   </div>
