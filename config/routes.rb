@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
 
   root to: 'pages#home'
+  get '/contact', to: 'pages#contact'
+  get '/about', to: 'pages#about'
 
   devise_for :users, controllers: { registrations: 'users/registrations', omniauth_callbacks: 'users/omniauth_callbacks' }
   # , controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
@@ -19,5 +21,3 @@ Rails.application.routes.draw do
 
 
 end
-
-
