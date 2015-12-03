@@ -1,6 +1,13 @@
 <div class="">
   <div class="">
     <div class="project-media-show" style="background-image: url('<%= image_path(@project.media) %>');">
+
+      <div class="edit-project">
+        <% if @current_user == @project.user %>
+        <%= link_to 'destroy', project_path(@project), method: :delete, class:'btn btn-danger'%>
+        <% end %>
+      </div>
+
       <div class="title-project-show">
         <%= @project.title %>
       </div>
