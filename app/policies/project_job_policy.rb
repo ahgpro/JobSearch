@@ -8,4 +8,11 @@ class ProjectJobPolicy < ApplicationPolicy
   def create?
     record.project.user == user
   end
+
+  def destroy?
+    record.project.user == user
+  end
+
 end
+
+

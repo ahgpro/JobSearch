@@ -21,6 +21,7 @@ class ProjectJobsController < ApplicationController
     @project_job = ProjectJob.find(params[:id])
     @project_job.destroy
     redirect_to project_path(@project_job.project_id)
+    authorize @project_job
   end
 
   private

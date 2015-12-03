@@ -10,6 +10,7 @@
       <div class="row">
         <% @project.project_jobs.each do |project_job| %>
           <div class="job-content col-sm-3">
+            <%= link_to 'destroy', project_project_job_path(@project, project_job), method: :delete, class:'btn btn-danger'%>
             <% if project_job.job != nil %>
                 <ul>
                   <li class="img-job-icon">
@@ -84,6 +85,10 @@
                 </li>
                 <% end %>
               </ul>
+
+
+
+
             <% end %>
             <% if @current_user != @project.user %>
               <%= link_to "Postuler", project_project_job_postulants_path(@project, project_job.id), method: :post, class:"btn btn-default" %>
