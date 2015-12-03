@@ -6,7 +6,9 @@
     <% if user_signed_in? %>
 
       <li class="pull-right">
-        <%= image_tag current_user.picture, class:"photo-fb avatar dropdown-toggle" %>
+        <%= link_to user_path(current_user) do %>
+        <%= image_tag current_user.picture, class:"photo-fb avatar dropdown-toggle"  %>
+        <% end %>
       </li>
 
       <li class="pull-right"><%= link_to "Logout", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %></li>

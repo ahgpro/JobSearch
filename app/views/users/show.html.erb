@@ -12,6 +12,7 @@
         <strong>Name</strong> : non renseigné
         <% else %>
         <%= @user.first_name %>
+        <%= @user.last_name[0].capitalize %>.
         <% end %>
       </div>
     </div>
@@ -36,7 +37,7 @@
       </div>
     </div>
 
-    <div class="reseaux sociaux text-center">
+    <div class="reseaux-sociaux text-center">
       <div class="col-md-12">
         <ul>
           <li>
@@ -75,10 +76,9 @@
     <div class="edit-user text-center">
       <div class="col-md-12">
         <% if current_user == @user %>
-        <p><%= link_to edit_user_registration_path do %>
-          <i class="fa fa-pencil-square-o"></i> <%= t ".profile", default: "Modifier mon profil" %>
+        <%= link_to edit_user_registration_path do %>
+          <%= t ".profile", default: "Modifier mon profil" %>
           <% end %>
-        </p>
         <% end %>
       </div>
     </div>
