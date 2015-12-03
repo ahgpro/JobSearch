@@ -1,15 +1,26 @@
-<div class="">
+<div class="container">
   <div class="">
     <div class="project-media-show" style="background-image: url('<%= image_path(@project.media) %>');">
+
+      <div class="edit-project">
+        <% if @current_user == @project.user %>
+        <%= link_to 'destroy', project_path(@project), method: :delete, class:'btn btn-danger'%>
+        <% end %>
+      </div>
+
       <div class="title-project-show">
         <%= @project.title %>
       </div>
     </div>
     <div class="container">
-      <%= @project.description %>
+      <div class="address-show"><%= @project.address %></div>
+      <div class="start-show"><%= @project.start_date %></div>
+      <div class="end-show"><%= @project.end_date %></div>
+      <div class="description-show"><%= @project.description %></div>
       <div class="row">
         <% @project.project_jobs.each do |project_job| %>
           <div class="job-content col-sm-3">
+            <%= link_to 'destroy', project_project_job_path(@project, project_job), method: :delete, class:'btn btn-danger'%>
             <% if project_job.job != nil %>
                 <ul>
                   <li class="img-job-icon">
@@ -27,7 +38,6 @@
                   </li>
                 </ul>
             <% end %>
-
             <%= project_job.description %>
 
             <% if @current_user == @project.user %>
@@ -84,6 +94,10 @@
                 </li>
                 <% end %>
               </ul>
+
+
+
+
             <% end %>
             <% if @current_user != @project.user %>
               <%= link_to "Postuler", project_project_job_postulants_path(@project, project_job.id), method: :post, class:"btn btn-default" %>

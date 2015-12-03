@@ -123,6 +123,7 @@ ul {
   height: 70px;
   padding: 5px;
 
+
 }
 
 .project-media-show {
@@ -130,6 +131,7 @@ ul {
   height: 350px;
   padding: 5px;
   position: relative;
+  padding: 114px;
 
   &:after {
     content:"";
@@ -155,6 +157,13 @@ ul {
   font-weight: 800;
 
 }
+
+.edit-project {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  z-index: 1;
+  }
 
 
 .body-show {

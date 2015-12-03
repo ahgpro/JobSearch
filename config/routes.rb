@@ -10,9 +10,9 @@ Rails.application.routes.draw do
   # , controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   resources :users, only: [ :edit, :update, :show ]
 
-  resources :projects , only: [:new, :create,:show, :edit, :delete, :index] do
-    resources :project_jobs , only: [:show, :create, :delete, :index] do
-      resources :postulants , only: [:show, :delete, :index, :create ]
+  resources :projects , only: [:new, :create,:show, :edit, :destroy, :index] do
+    resources :project_jobs , only: [:show, :create, :destroy, :index] do
+      resources :postulants , only: [:show, :destroy, :index, :create ]
     end
   end
 
