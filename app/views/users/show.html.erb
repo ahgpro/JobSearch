@@ -2,25 +2,25 @@
   <div class="container">
     <div class="photo-profile">
       <div class="col-md-12">
-        <%= image_tag @user.picture, class:"img-circle" %>
+        <%= image_tag @user.picture, class:"img-circle-profile" %>
       </div>
     </div>
     <div class="infos">
       <% if @user.first_name.blank? %>
         <strong>Name</strong> : non renseigné
       <% else %>
-        <%= @user.first_name %>
-        <%= @user.last_name[0].capitalize %>.
+        <h3>
+          <%= @user.first_name %>
+          <%= @user.last_name[0].capitalize %>.
+        </h3>
       <% end %>
-    </div>
-    <div class="description">
+
       <% if @user.description.blank? %>
         <strong>Description</strong> : non renseigné
       <% else %>
         <%= @user.description %>
       <% end %>
-    </div>
-    <div class="skillz">
+
       <% if @user.skillz.blank? %>
         <strong>Skillz</strong> : non renseigné
       <% else %>
@@ -28,7 +28,7 @@
       <% end %>
     </div>
     <div class="socials">
-      <ul>
+      <ul class='list-inline'>
         <li>
           <% if !@user.sociallink1.blank? %>
             <%= link_to @user.sociallink1, target: "_blank" do %>
@@ -61,6 +61,7 @@
     <% end %>
   </div>
   <div class="jobs">
+    <% if current_user == @user %>
     <div class="container">
       <div class="row">
         <div class="col-sm-4">
@@ -102,4 +103,5 @@
       </div>
     </div>
   </div>
+  <% end %>
 </div>

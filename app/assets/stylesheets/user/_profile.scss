@@ -1,11 +1,15 @@
-.img-circle {
+.photo-profile {
+  text-align: center;
+}
+
+.img-circle-profile {
     border-radius: 50%;
     width: 150px;
     height: 150px;
     margin-top: 50px;
     border-style: solid;
     border-width: 8px;
-    border-color: white;
+    border-color: #C5B143;
 }
 
 .firstname {
@@ -18,7 +22,30 @@
   background: #23447B;
   color: white;
   margin-bottom: 20px;
+}
+.infos {
+  background-color: whitesmoke;
+  border-radius: 4px;
+  margin: 20px auto;
+  color:black;
+  h3 {
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-size: 45px;
+    text-align: center;
+    color:#C5B143;
+  }
+}
 
+.socials {
+  font-size: 35px;
+  text-align: center;
+  background-color: whitesmoke;
+  border-radius: 4px;
+  padding:10px;
+  li {
+    letter-spacing: 40px;
+  }
 }
 .jobs {
   .pending, .accepted, .refused {
