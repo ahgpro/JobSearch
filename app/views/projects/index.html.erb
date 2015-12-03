@@ -52,7 +52,13 @@
 </div>
 
 <% content_for(:after_js) do %>
-<script>
-$("#search_job_id").addClass("form-control")
-</script>
+  <script>
+    $("#search_domain_id").on('change', function(){
+      var domain_id = $(this).find('option:selected').val();
+      $("#search_job_id option").show();
+      $("#search_job_id option:not([data-domain-id='"+domain_id+"'])").hide();
+      $("#search_job_id option").first().attr("selected", "selected");
+    });
+    $("#search_job_id").addClass("form-control")
+  </script>
 <% end %>

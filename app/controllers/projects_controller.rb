@@ -5,13 +5,6 @@ class ProjectsController < ApplicationController
 
 
   def index
-    # if params[:search] and (not params[:search][:job].blank? or not params[:search][:address].blank?)
-    # if params[:search][:jobs] && params[:search][:address]
-    #   @projects = Project.where(address: params[:search][:address]) && Project.where(jobs: params[:search][:jobs])
-    # elsif params[:search][:address]
-    #   @projects = Project.where(jobs: params[:search][:jobs])
-    # elsif params[:search][:jobs]
-      # @projects = Project.where(address: params[:search][:address])
 
     @projects = policy_scope(Project).includes(:jobs)
 
