@@ -11,9 +11,9 @@
   </head>
   <body class="<%= action_name %>">
     <%= render 'shared/navbar_custom' %>
-    <%= render 'shared/flashes' %>
+
     <%= yield %>
-    <%= render 'shared/footer' %>
+
 
     <%= javascript_include_tag 'application' %>
     <%= yield(:after_js) %>
