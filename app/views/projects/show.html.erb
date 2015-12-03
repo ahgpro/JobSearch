@@ -107,19 +107,20 @@
       </div>
     </div>
   </div>
-  <div class="">
-    <div class="">
-      <% if @current_user == @project.user %>
-        <%= simple_form_for [@project, @project_job] do |f| %>
-        <%= f.error_notification %>
-        <%= f.input :job_id, collection: Job.all, prompt: "choose a job" %>
-        <%= f.input :number, placeholder: "Quantity of" %>
-        <%= f.input :description, placeholder: "Add a description of the job" %>
-        <%= f.button :submit, class: "btn btn-primary" %>
+  <div class="job-form" style="padding:40px;">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <% if @current_user == @project.user %>
+          <%= simple_form_for [@project, @project_job] do |f| %>
+          <%= f.error_notification %>
+          <%= f.input :job_id, collection: Job.all, prompt: "choose a job" %>
+          <%= f.input :number, placeholder: "Quantity of" %>
+          <%= f.input :description, as: :text, placeholder: "Add a description of the job" %>
+          <%= f.button :submit, value: "Add", class: "btn btn-primary" %>
+          <% end %>
+          <%#= link_to "Back", project_path(@project), class: "btn btn-info" %>
         <% end %>
-        <%= link_to "Back", project_path(@project), class: "btn btn-info" %>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>
-

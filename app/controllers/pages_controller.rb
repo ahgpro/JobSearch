@@ -6,4 +6,10 @@ class PagesController < ApplicationController
   def home
     @domains = Domain.all.to_json(:include => :jobs)
   end
+
+  def contact
+  end
+
+  def about
+  end
 end

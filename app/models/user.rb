@@ -33,6 +33,16 @@ class User < ActiveRecord::Base
     end
   end
 
+  def pending_jobs
+    self.postulants.where(status: nil)
+  end
+  def accepted_jobs
+    self.postulants.where(status: true)
+  end
+  def refused_jobs
+    self.postulants.where(status: false)
+  end
+
   private
 
 
