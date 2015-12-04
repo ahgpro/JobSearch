@@ -17,25 +17,58 @@ Domain.destroy_all
 
 
 domains = [
-  {
-    label: "video",
+    {
+    label: "Film",
     jobs: [
-      { name: "cameraman", picture: "monteur.png" },
-      { name: "perchiste", picture: "perchiste.jpg" },
-      { name: "assistant-monteur", picture: "monteur-video.png" },
-      { name: "monteur", picture: "" },
-      { name: "figurant", picture: "figurant.jpg" }
+      { name: "Acteur", picture: "actor-male.jpg" },
+      { name: "Actrice", picture: "actor-female.jpg" },
+      { name: "Figurant homme", picture: "figurant-male.jpg" },
+      { name: "Figurant femme", picture: "figurant-female.jpg" },
+      { name: "Cascadeur homme", picture: "cascadeur-male.jpg" },
+      { name: "Cascadeur femme", picture: "cascadeur-male.jpg" },
+      { name: "Voix off homme", picture: "voix-off.jpg" },
+      { name: "Voix off femme", picture: "voix-off.jpg" }
     ]
   },
   {
-    label: "musique",
+    label: "Musique",
     jobs: [
-      { name: "compositeur", picture: "compositeur.png" },
-      { name: "chanteur", picture: "chanteur.jpg" },
-      { name: "guitariste", picture: "guitariste.jpg" }
+      { name: "Chanteur", picture: "chanteur.jpg" },
+      { name: "Chanteuse", picture: "singer-female.jpg" },
+      { name: "Compositeur", picture: "compositeur.png" },
+      { name: "Guitariste", picture: "guitariste.jpg" },
+      { name: "Trompettiste", picture: "trompet.jpg" },
+      { name: "Violoniste", picture: "violin.jpg" },
+      { name: "Batteur", picture: "batteur.jpg" }
     ]
-  }
+  },
+  {
+    label: "Spectacle",
+    jobs: [
+      { name: "Animateur", picture: "animateur.jpg" },
+      { name: "Comédiens", picture: "comedien.jpg" },
+      { name: "Danseur/Danseuse", picture: "dancer-girls.jpg" },
+      { name: "Magicien", picture: "magician.jpg" },
+      { name: "Jongleur", picture: "juggler.jpg" },
+      { name: "Clown", picture: "clown.jpg" }
+    ]
+  },
+  {
+    label: "Techniciens",
+    jobs: [
+      { name: "Cameraman", picture: "monteur.png" },
+      { name: "Preneur son", picture: "" },
+      { name: "Perchiste", picture: "perchiste.jpg" },
+      { name: "Monteur", picture: "" },
+      { name: "Assistant-monteur", picture: "monteur-video.png" },
+      { name: "Ingenieur son", picture: ""},
+      { name: "Veejay", picture: ""}
+    ]
+  },
 ]
+
+
+
 
 puts "- Seed Domains and Jobs"
 
