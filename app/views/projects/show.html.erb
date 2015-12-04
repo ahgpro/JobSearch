@@ -43,7 +43,6 @@
                 </ul>
             <% end %>
             <%= project_job.description %>
-
             <% if @current_user == @project.user %>
               <p>Candidatures en attente</p>
               <ul>
@@ -81,7 +80,6 @@
                 </li>
                 <% end %>
               </ul>
-
               <p>Candidatures refusées</p>
               <ul>
                 <% project_job.postulants.each do |postulant| %>
@@ -98,23 +96,18 @@
                 </li>
                 <% end %>
               </ul>
-
-
-
-
             <% end %>
 
-            <% if @current_user != @project.user %>
-            <% if project_job.users.find { |user| user == current_user } %>
-              Je participe
-              <%= link_to "Je départicipe", project_project_job_postulant_path(@project, project_job, project_job.postulants.find_by_user_id(current_user.id)), method: :delete, class:"btn btn-default" %>
-            <% end %>
 
-            <% if @current_user != @project.user %>
-              <%= link_to "Postuler", project_project_job_postulants_path(@project, project_job.id), method: :post, class:"btn btn-primary btn-prostate" %>
+          <% if @current_user != @project.user %>
+           <% if project_job.users.find { |user| user == current_user } %>
+             Je participe
+             <%= link_to "Je départicipe", project_project_job_postulant_path(@project, project_job, project_job.postulants.find_by_user_id(current_user.id)), method: :delete, class:"btn btn-primary btn-prostate" %>
+             <% else %>
+             <%= link_to "Postuler", project_project_job_postulants_path(@project, project_job), method: :post, class:"btn btn-primary btn-prostate" %>
+           <% end %>
+           <% end %>
 
-            <% end %>
-            <% end %>
           </div>
         <% end %>
       </div>
