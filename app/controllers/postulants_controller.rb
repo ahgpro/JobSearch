@@ -11,8 +11,9 @@ class PostulantsController < ApplicationController
 
   def destroy
     @postulant = Postulant.find(params[:id])
+    authorize @postulant
     @postulant.destroy
-    redirect_to project_path(@postulant.project_job_id)
+    redirect_to project_path(@postulant.project_job.project)
   end
 
   def new
