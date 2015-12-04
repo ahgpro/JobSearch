@@ -24,3 +24,5 @@
 //     $nav.removeClass('scrolled');
 //   }
 // });
+
+$('.alert').fadeOut(4000);
