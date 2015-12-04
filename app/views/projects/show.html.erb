@@ -19,10 +19,12 @@
       <div class="description-show"><%= @project.description %></div>
       <div class="row">
         <% @project.project_jobs.each do |project_job| %>
-          <div class="job-content col-sm-3">
+
+          <div class="job-content col-sm-12">
             <% if @current_user == @project.user %>
-            <%= link_to 'destroy', project_project_job_path(@project, project_job), method: :delete, class:'btn btn-danger'%>
+            <%= link_to 'destroy', project_project_job_path(@project, project_job), method: :delete, class: 'btn btn-danger pull-right'%>
             <% end %>
+
             <% if project_job.job != nil %>
                 <ul>
                   <li class="img-job-icon">
@@ -108,7 +110,7 @@
             <% end %>
 
             <% if @current_user != @project.user %>
-              <%= link_to "Postuler", project_project_job_postulants_path(@project, project_job), method: :post, class:"btn btn-default" %>
+              <%= link_to "Postuler", project_project_job_postulants_path(@project, project_job.id), method: :post, class:"btn btn-primary btn-prostate" %>
             <% end %>
 
           </div>
