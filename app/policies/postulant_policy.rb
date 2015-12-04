@@ -9,6 +9,10 @@ class PostulantPolicy < ApplicationPolicy
     true
   end
 
+  def destroy?
+    record.user == user
+  end
+
   def accepted?
     true
   end
