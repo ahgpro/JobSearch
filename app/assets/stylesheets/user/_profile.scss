@@ -49,7 +49,8 @@
 .jobs {
   .pending, .accepted, .refused {
     background-color: whitesmoke;
-    color:black;
+    color:grey;
+    font-family: 'raleway', cursive;
     border-radius: 4px;
     padding:10px 20px;
     height:250px;
