@@ -127,7 +127,7 @@
           <% end %>
           <% if @current_user != @project.user %>
           <% if project_job.users.find { |user| user == current_user } %>
-          <%= link_to "Je départicipe", project_project_job_postulant_path(@project, project_job, project_job.postulants.find_by_user_id(current_user.id)), method: :delete, class:"btn btn-primary btn-prostate" %>
+          <%= link_to "Retirer ma candidature", project_project_job_postulant_path(@project, project_job, project_job.postulants.find_by_user_id(current_user.id)), method: :delete, class:"btn btn-primary btn-prostate" %>
           <% else %>
           <%= link_to "Postuler", project_project_job_postulants_path(@project, project_job), method: :post, class:"btn btn-primary btn-prostate" %>
           <% end %>
