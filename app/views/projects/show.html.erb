@@ -1,35 +1,42 @@
 <div class="container">
   <div class="">
     <div class="project-media-show" style="background-image: url('<%= image_path(@project.media) %>');">
+      <div class="project-media-show-filter">
+        <div class="edit-project">
+          <% if @current_user == @project.user %>
+          <%= link_to 'destroy', project_path(@project), method: :delete, class:'btn btn-danger'%>
+          <% end %>
+        </div>
 
-      <div class="edit-project">
-        <% if @current_user == @project.user %>
-        <%= link_to 'destroy', project_path(@project), method: :delete, class:'btn btn-danger'%>
-        <% end %>
-      </div>
-
-      <div class="title-project-show">
-        <%= @project.title %>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-      <div class="col-md-6">
-
-         <div class="address-show">Address :<h4><%= @project.address %></h4></div>
-
-      </div>
-      <div class="col-md-6">
-      <div class="start-show">Start Date :<h4><%= l @project.start_date, format: :short %></h4></div>
-      <div class="end-show">End Date :<h4><%= l @project.end_date, format: :short %></h4></div>
+        <div class="title-project-show">
+          <%= @project.title %>
         </div>
       </div>
-     <div class="project-headers">Description du projet</div>
-            <div class="description-show"><%= @project.description %></div>
-      <div class="row">
+    </div>
+    <div class="container-fluid project-meta">
+      <div class="row ">
+        <div class="col-md-6">
+
+           <div class="address-show">Address :<h4><%= @project.address %></h4></div>
+
+        </div>
+        <div class="col-md-3">
+          <div class="start-show">Start Date :<h4><%= l @project.start_date, format: :short %></h4></div>
+        </div>
+        <div class="col-md-3">
+          <div class="end-show">End Date :<h4><%= l @project.end_date, format: :short %></h4></div>
+        </div>
+
+
+
+      </div>
+    </div>
+      <div class="project-headers">Description du projet</div>
+      <div class="description-show"><%= @project.description %></div>
+      <div class="">
         <% @project.project_jobs.each do |project_job| %>
 
-        <div class="job-content col-sm-11">
+        <div class="job-content">
           <% if @current_user == @project.user %>
           <%= link_to 'destroy', project_project_job_path(@project, project_job), method: :delete, class: 'btn btn-danger pull-right'%>
           <% end %>
@@ -37,21 +44,25 @@
           <% if project_job.job != nil %>
           <ul class="list-unstyled">
             <li class="img-job-icon">
-              <%= image_tag(project_job.job.picture) %>
-            </li>
-            <li>
-              <%= project_job.postulants.count %> postulants pour ce project.
-            </li>
-            <li>
-              <% if project_job.number <= 1 %>
-              <%= project_job.job.name %> (Sold-out)
-              <% else %>
-              <%= project_job.job.name %> (postes disponibles : <%= project_job.number %>)
-              <% end %>
+              <div class="media">
+                <div class="media-left">
+                  <%= image_tag(project_job.job.picture) %>
+                </div>
+                <div class="media-body">
+                  <h3 class="project-job-title"><%= project_job.job.name %></h3>
+                  <p class="text-muted">
+                    <%= project_job.postulants.count %>
+                    /
+                    <%= project_job.number %> postulants pour ce project
+                  </p>
+                </div>
+              </div>
             </li>
           </ul>
           <% end %>
-          <%= project_job.description %>
+          <div class="project-job-description">
+            <%= project_job.description %>
+          </div>
           <% if @current_user == @project.user %>
 
           <div class="row admin">
@@ -116,7 +127,6 @@
           <% end %>
           <% if @current_user != @project.user %>
           <% if project_job.users.find { |user| user == current_user } %>
-          Je participe
           <%= link_to "Je départicipe", project_project_job_postulant_path(@project, project_job, project_job.postulants.find_by_user_id(current_user.id)), method: :delete, class:"btn btn-primary btn-prostate" %>
           <% else %>
           <%= link_to "Postuler", project_project_job_postulants_path(@project, project_job), method: :post, class:"btn btn-primary btn-prostate" %>
