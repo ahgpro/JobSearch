@@ -2,7 +2,11 @@
   <div class="container">
     <div class="photo-profile">
       <div class="col-md-12">
-        <%= image_tag @user.picture, class:"img-circle-profile" %>
+        <% if @user.picture.blank? %>
+          <%= image_tag 'profile-default.jpg', class:"img-circle-profile" %>
+        <% else %>
+          <%= image_tag @user.picture, class:"img-circle-profile" %>
+        <% end %>
       </div>
     </div>
     <div class="infos">
@@ -53,13 +57,6 @@
       </ul>
     </div>
   </div>
-  <div class="edit-infos">
-    <% if current_user == @user %>
-      <%= link_to edit_user_registration_path do %>
-        <%= t ".profile", default: "Modifier mon profil" %>
-      <% end %>
-    <% end %>
-  </div>
   <div class="jobs">
     <% if current_user == @user %>
     <div class="container">
@@ -104,4 +101,11 @@
     </div>
   </div>
   <% end %>
+  <div class="edit-infos">
+    <% if current_user == @user %>
+      <%= link_to edit_user_registration_path do %>
+        <%= t ".profile", default: "Modifier mon profil" %>
+      <% end %>
+    <% end %>
+  </div>
 </div>
