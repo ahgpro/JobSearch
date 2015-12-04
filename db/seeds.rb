@@ -43,7 +43,7 @@ domains = [
     ]
   },
   {
-    spectacle: "Spectacle",
+    label: "Spectacle",
     jobs: [
       { name: "Animateur", picture: "animateur.jpg" },
       { name: "Comédiens", picture: "comedien.jpg" },
@@ -51,8 +51,6 @@ domains = [
       { name: "Magicien", picture: "magician.jpg" },
       { name: "Jongleur", picture: "juggler.jpg" },
       { name: "Clown", picture: "clown.jpg" }
-
-
     ]
   },
   {
