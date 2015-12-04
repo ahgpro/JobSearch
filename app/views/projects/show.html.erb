@@ -22,7 +22,7 @@
 
           <div class="job-content col-sm-12">
             <% if @current_user == @project.user %>
-            <%= link_to 'destroy', project_project_job_path(@project, project_job), method: :delete, class:'btn btn-danger pull-right'%>
+            <%= link_to 'destroy', project_project_job_path(@project, project_job), method: :delete, class: 'btn btn-danger pull-right'%>
             <% end %>
 
             <% if project_job.job != nil %>
@@ -110,7 +110,7 @@
             <% end %>
 
             <% if @current_user != @project.user %>
-              <%= link_to "Postuler", project_project_job_postulants_path(@project, project_job.id), method: :post, class:"btn btn-primary pull-right" %>
+              <%= link_to "Postuler", project_project_job_postulants_path(@project, project_job.id), method: :post, class:"btn btn-primary btn-prostate" %>
             <% end %>
 
           </div>
