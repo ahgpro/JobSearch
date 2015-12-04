@@ -101,9 +101,10 @@
 
 
             <% end %>
+
             <% if project_job.users.find { |user| user == current_user } %>
-              Je participe gringo !
-              <%= link_to "Je départicipe PD", project_project_job_postulant_path(@project, project_job, project_job.postulants.find_by_user_id(current_user.id)), method: :delete %>
+              Je participe
+              <%= link_to "Je départicipe", project_project_job_postulant_path(@project, project_job, project_job.postulants.find_by_user_id(current_user.id)), method: :delete, class:"btn btn-default" %>
             <% end %>
 
             <% if @current_user != @project.user %>
