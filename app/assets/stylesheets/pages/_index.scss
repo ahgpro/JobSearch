@@ -6,11 +6,6 @@
   background-color: #f1f1f1;
 }
 
-ul {
-  list-style-type: none;
-  display: inline;
-}
-
 .card-project {
   position: relative;
   margin-top: 5px;
@@ -133,7 +128,7 @@ ul {
   position: relative;
   padding: 114px;
 
-  &:after {
+  &-filter {
     content:"";
     position: absolute;
     top: 0;
@@ -144,10 +139,17 @@ ul {
   }
 }
 
-.project-media-filter {
-
+.project-job-title {
+  margin: 0;
+  font-size: 30px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
 }
-
+.project-job-description {
+  border-left: 3px solid #CCC;
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
 .title-project-show {
   text-align: center;
   color: #F7F7F7;
@@ -155,13 +157,53 @@ ul {
   margin-top: 30px;
   font-family: 'Raleway', sans-serif;
   font-weight: 800;
+  padding: 120px;
 
 }
-
+.project-meta {
+  margin-top: 30px;
+  color: #666;
+  background: #EEE;
+}
 .edit-project {
   position: absolute;
   right: 0px;
   bottom: 0px;
   z-index: 1;
   }
+.description-show {
+  background-color: white;
+  font-size: 21px;
+  font-family: raleway;
+  padding: 30px;
+}
 
+.project-headers {
+  text-align: center;
+  font-family: raleway;
+  font-size: 40px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.address-show {
+  text-align: center;
+  font-family: raleway;
+  font-size: 20px;
+  font-weight: 600
+
+}
+.start-show {
+  text-align: center;
+  font-family: raleway;
+  font-size: 20px;
+  font-weight: 600
+
+}
+.end-show {
+  text-align: center;
+  font-family: raleway;
+  font-size: 20px;
+  font-weight: 600
+
+}
