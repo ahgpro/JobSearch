@@ -51,9 +51,9 @@
                 <div class="media-body">
                   <h3 class="project-job-title"><%= project_job.job.name %></h3>
                   <p class="text-muted">
-                    <%= project_job.postulants.count %>
+                    <%= project_job.postulants.where(status: true).count %>
                     /
-                    <%= project_job.number %> postulants pour ce project
+                    <%= pluralize(project_job.number, project_job.job.name) %> pour ce project
                   </p>
                 </div>
               </div>

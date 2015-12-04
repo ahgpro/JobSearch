@@ -12114,7 +12114,7 @@ button.close {
 
 /* line 56, /Users/alexandre/code/the7thsymphony/JobSearch/app/assets/stylesheets/layout/_navbar_custom.scss */
 #cssmenu > ul > li > a {
-  padding: 20px 25px;
+  padding: 0px 0px;
   font-size: 14px;
   text-transform: uppercase;
   text-decoration: none;
