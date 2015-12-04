@@ -1,0 +1,19 @@
+
+
+<div class="project-item-card" style="background-image: url(<%= cloudinary_url postulant.project_job.project.media %>);">
+  <%= link_to project_path(project) do %>
+    <div class="project-item-card-filter">
+      <h3 class="project-item-card-title">
+        <%= project.title %>
+      </h3>
+      <p class="project-item-card-date">
+        <%= l project.start_date, format: :short %>
+      </p>
+    </div>
+  <% end %>
+
+</div>
+
+
+
+

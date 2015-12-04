@@ -62,12 +62,33 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-4">
-          <div class="pending">
-            <p>Mes candidatures en cours</p>
-            <ul>
-              <% current_user.pending_jobs.each do |job| %>
+          <div class="refused">
+            <p class="title-column-job">Mes projets en cours</p>
+            <ul class="list-unstyled">
+              <% if current_user.projects.size <= 0 %>
+                <li class="text-center">
+                  Pas encore de projet
+                  <p><%= link_to "Créer un nouveau projet", new_project_path %></p>
+                </li>
+              <% end %>
+              <% current_user.projects.each do |project| %>
                 <li>
-                  <%= job.project_job.job.name %>
+                  <%= render 'projects/project_item2', project: project %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="pending">
+            <p class="title-column-job">Mes candidatures en cours</p>
+            <ul class="list-unstyled">
+              <% if current_user.pending_jobs.size <= 0 %>
+                <li class="text-center">Pas encore de candidature en cours</li>
+              <% end %>
+              <% current_user.pending_jobs.each do |postulant| %>
+                <li>
+                  <%= render 'projects/project_item', postulant: postulant %>
                 </li>
               <% end %>
             </ul>
@@ -75,23 +96,14 @@
         </div>
         <div class="col-sm-4">
           <div class="accepted">
-            <p>Mes candidatures acceptées</p>
-            <ul>
-              <% current_user.accepted_jobs.each do |job| %>
-                <li>
-                  <%= job.project_job.job.name %>
-                </li>
+            <p class="title-column-job">Mes candidatures acceptées</p>
+            <ul class="list-unstyled">
+              <% if current_user.accepted_jobs.size <= 0 %>
+                <li class="text-center">Pas encore de candidature acceptée</li>
               <% end %>
-            </ul>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="refused">
-            <p>Mes candidatures refusées</p>
-            <ul>
-              <% current_user.refused_jobs.each do |job| %>
+              <% current_user.accepted_jobs.each do |postulant| %>
                 <li>
-                  <%= job.project_job.job.name %>
+                  <%= render 'projects/project_item', postulant: postulant %>
                 </li>
               <% end %>
             </ul>
@@ -103,7 +115,7 @@
   <% end %>
   <div class="edit-infos">
     <% if current_user == @user %>
-      <%= link_to edit_user_registration_path do %>
+      <%= link_to edit_user_registration_path, class:"btn btn-default" do %>
         <%= t ".profile", default: "Modifier mon profil" %>
       <% end %>
     <% end %>
