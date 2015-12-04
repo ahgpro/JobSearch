@@ -6,11 +6,6 @@
   background-color: #f1f1f1;
 }
 
-ul {
-  list-style-type: none;
-  display: inline;
-}
-
 .card-project {
   position: relative;
   margin-top: 5px;
@@ -164,4 +159,39 @@ ul {
   bottom: 0px;
   z-index: 1;
   }
+.description-show {
+  background-color: white;
+  height: 200px;
+  font-size: 21px;
+  font-family: raleway;
+  padding: 30px;
+}
 
+.project-headers {
+  text-align: center;
+  font-family: raleway;
+  font-size: 40px;
+  font-weight: 600
+}
+
+.address-show {
+  text-align: center;
+  font-family: raleway;
+  font-size: 20px;
+  font-weight: 600
+
+}
+.start-show {
+  text-align: center;
+  font-family: raleway;
+  font-size: 20px;
+  font-weight: 600
+
+}
+.end-show {
+  text-align: center;
+  font-family: raleway;
+  font-size: 20px;
+  font-weight: 600
+
+}
